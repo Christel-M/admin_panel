@@ -1,0 +1,9 @@
+<h1><%=@instructor.first_name%>'s Profile</h1>
+
+<p>Full Name: &nbsp <%=@instructor.last_name%>, <%=@instructor.first_name%></p>
+<p>Age: &nbsp <%=@instructor.age%></p>
+<p>Education: &nbsp <%=@instructor.education%></p>
+
+<br>
+<%= link_to 'Home', root_path %> &nbsp
+<%= link_to 'Edit', edit_instructor_path %>

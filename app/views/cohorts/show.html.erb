@@ -1,0 +1,18 @@
+<h1><%=@cohort.name%></h1>
+
+<p>Cohort Name: &nbsp <%=@cohort.name%></p>
+<p>Start Date: &nbsp <%=@cohort.start_date%></p>
+<p>End Date: &nbsp <%=@cohort.end_date%></p>
+<p>Instructor: &nbsp <%=@cohort.instructor_id%></p>
+<p>Course: &nbsp <%=@cohort.course_id%></p>
+
+<p>Students in this Cohort:</p>
+<ul>
+  <%@cohort.students.each do |st|%>
+  <li><%=st.last_name%>, <%=st.first_name%></li>
+  <%end%>
+</ul>
+
+<br>
+<%= link_to 'Home', root_path %> &nbsp
+<%= link_to 'Edit', edit_cohort_path %>

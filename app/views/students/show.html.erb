@@ -1,0 +1,9 @@
+<h1><%=@student.first_name%>'s Profile</h1>
+
+<p>Full Name: &nbsp <%=@student.last_name%>,  <%=@student.first_name%></p>
+<p>Age: &nbsp <%=@student.age%></p>
+<p>Education: &nbsp <%=@student.education%></p>
+
+<br>
+<%= link_to 'Home', root_path %> &nbsp
+<%= link_to 'Edit', edit_student_path %>

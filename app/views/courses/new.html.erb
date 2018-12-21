@@ -1,0 +1,18 @@
+<h1>Create Course</h1>
+
+<%= form_for(@course) do |f|%>
+
+<p><%= f.label :name, "Course Name"%> <br>
+  <%= f.text_field :name%></p>
+
+<p><%= f.label :class_hours, "Class Hours"%> <br>
+<%= f.number_field :class_hours%></p>
+
+<p>
+  <%= f.submit "Create Course"%>
+</p>
+
+<%end%>
+
+<br><br>
+<%= link_to 'Home', root_path %>
