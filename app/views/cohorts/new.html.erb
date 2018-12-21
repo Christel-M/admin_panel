@@ -13,13 +13,13 @@
 
 <p><%= f.label :course, "Select Course"%> <br>
   <%= f.select(:course, Course.all.collect{ |cr|
-                                              [cr.id]
+                                              ["#{cr.id}, #{cr.name}"]
                                               },{include_blank: true })%>
 </p>
 
 <p><%= f.label :instructor, "Select Instructor"%> <br>
   <%= f.select(:instructor, Instructor.all.collect{ |inst|
-                                              [inst.id]
+                                              ["#{inst.id}, #{inst.last_name}, #{inst.first_name}"]
                                               },{include_blank: true })%>
 </p>
 
