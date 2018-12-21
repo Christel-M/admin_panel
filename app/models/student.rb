@@ -6,6 +6,5 @@ class Student < ApplicationRecord
   validates :education, presence: true
   # edu = %w(High\ School College Masters PHD)
   # validates_inclusion_of :education, :in => edu
-
-  has_and_belongs_to_many :cohorts
+  validates :age, inclusion: {in: 1..150}, { message: "%{value} seems wrong" }
 end

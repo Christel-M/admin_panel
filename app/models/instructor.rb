@@ -6,6 +6,8 @@ class Instructor < ApplicationRecord
   validates :education, presence: true
   # edu = %w(High\ School College Masters PHD)
   # validates_inclusion_of :education, :in => edu
+  validates :age, inclusion: {in: 1..150}
+  validates :salary, numericality: {other_than: 0}
 
   belongs_to :cohort, optional: true
 
