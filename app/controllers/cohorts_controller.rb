@@ -1,5 +1,6 @@
 class CohortsController < ApplicationController
   def new
+    @admin = Admin.find(params[:admin_id])
     @cohort = Cohort.new
   end
 
@@ -7,7 +8,7 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new(cohort_params)
     if @cohort.valid?
       @cohort.save
-      redirect_to @cohort
+      redirect_to admin_cohort_path(id: @cohort.id)
     else
       puts "Error: #{@cohort.errors.messages}"
       render 'new'
@@ -15,6 +16,7 @@ class CohortsController < ApplicationController
   end
 
   def edit
+    @admin = Admin.find(params[:admin_id])
     @cohort = Cohort.find(params[:id])
   end
 
@@ -28,6 +30,12 @@ class CohortsController < ApplicationController
 
   def update
     @cohort = Cohort.find(params[:id])
+    if @cohort.update_attributes(cohort_params)
+      redirect_to admin_cohort_path(id: @cohort.id)
+    else
+      puts @cohort.errors.messages
+      render 'edit'
+    end
   end
 
   private

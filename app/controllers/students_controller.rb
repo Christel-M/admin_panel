@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   def new
+    @admin = Admin.find(params[:admin_id])
     @student = Student.new
   end
 
@@ -8,7 +9,7 @@ class StudentsController < ApplicationController
 
     if @student.valid?
       @student.save
-      redirect_to @student
+      redirect_to admin_student_path(id: @student.id)
     else
       puts @student.errors.messages
       render 'new'
@@ -24,6 +25,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
+    @admin = Admin.find(params[:admin_id])
     @student = Student.find(params[:id])
   end
 
@@ -31,7 +33,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
 
     if @student.update_attributes(st_params)
-      redirect_to @student
+      redirect_to admin_student_path(id: @student.id)
     else
       puts @student.errors
       render 'edit'

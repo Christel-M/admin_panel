@@ -1,2 +1,15 @@
-<h1>Courses#edit</h1>
-<p>Find me in app/views/courses/edit.html.erb</p>
+<h1>Edit <%=@course.name%></h1>
+
+<%= form_for([@admin, @course]) do |f|%>
+
+<p><%= f.label :name, "Course Name"%> <br>
+  <%= f.text_field :name%></p>
+
+<p><%= f.label :class_hours, "Class Hours"%> <br>
+<%= f.number_field :class_hours%></p>
+
+<p>
+  <%= f.submit "Update Information"%>
+</p>
+
+<%end%>

@@ -3,5 +3,5 @@ class Course < ApplicationRecord
   validates :class_hours, presence: true
   # has_many :cohorts, optional: true
   has_many :cohorts
-  belongs_to :admin
+  # belongs_to :admin
 end

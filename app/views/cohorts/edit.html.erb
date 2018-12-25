@@ -1,2 +1,37 @@
-<h1>Cohorts#edit</h1>
-<p>Find me in app/views/cohorts/edit.html.erb</p>
+<h1>Edit <%=@cohort.name%></h1>
+
+<%= form_for([@admin, @cohort]) do |f|%>
+
+<p><%= f.label :name, "Cohort Name"%> <br>
+  <%= f.text_field :name%></p>
+
+<p><%= f.label :start_date, "Start Date"%> <br>
+  <%= f.date_field :start_date%></p>
+
+<p><%= f.label :end_date, "End Date"%> <br>
+  <%= f.date_field :end_date%></p>
+
+<p><%= f.label :course_id, "Select Course"%> <br>
+  <%= f.select(:course_id, Course.all.collect{ |cr|
+                                              ["#{cr.id}, #{cr.name}"]
+                                              },{include_blank: true })%>
+</p>
+
+<p><%= f.label :instructor_id, "Select Instructor"%> <br>
+  <%= f.select(:instructor_id, Instructor.all.collect{ |inst|
+                                              ["#{inst.id}, #{inst.last_name}, #{inst.first_name}"]
+                                              },{include_blank: true })%>
+</p>
+
+<p>
+  <%= f.collection_check_boxes :student_ids, Student.all, :id, :full_name do |st| %>
+  <%= st.check_box %>
+  <%= st.label %>
+  <%end%>
+</p>
+
+<p>
+  <%= f.submit "Update Information" %>
+</p>
+
+<%end%>

@@ -1,6 +1,6 @@
 <h1>Create Student</h1>
 
-<%= form_for(@student) do |f|%>
+<%= form_for([@admin, @student]) do |f|%>
 
 <p><%= f.label :first_name, "First Name"%> <br>
   <%= f.text_field :first_name%></p>

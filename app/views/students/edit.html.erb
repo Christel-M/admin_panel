@@ -1,2 +1,21 @@
-<h1>Students#edit</h1>
-<p>Find me in app/views/students/edit.html.erb</p>
+<h1>Edit <%=@student.last_name%>'s Profile</h1>
+
+<%= form_for([@admin, @student]) do |f|%>
+
+<p><%= f.label :first_name, "First Name"%> <br>
+  <%= f.text_field :first_name%></p>
+
+<p><%= f.label :last_name, "Last Name"%> <br>
+  <%= f.text_field :last_name%></p>
+
+<p><%= f.label :age%> <br>
+<%= f.number_field :age%></p>
+
+<p><%= f.label :education%> <br>
+  <%= f.select :education, ["Highschool Diploma", "Bachelor's Degree", "Master's Degree", "Ph.D"], :include_blank => true %></p>
+
+<p>
+  <%= f.submit "Update Information" %>
+</p>
+
+<%end%>

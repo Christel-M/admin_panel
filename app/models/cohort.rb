@@ -5,7 +5,7 @@ class Cohort < ApplicationRecord
 
   belongs_to :instructor
   belongs_to :course
-  belongs_to :admin
+  # belongs_to :admin
 
 
 end
