@@ -1,14 +1,17 @@
 class InstructorsController < ApplicationController
   def new
+    @admin = Admin.find(params[:admin_id])
     @instructor = Instructor.new
   end
 
   def create
+    # @admin = Admin.find(params[:admin_id])
     @instructor = Instructor.new(inst_params)
 
     if @instructor.valid?
+      # @instructor.admin_id = params[:admin_id]
       @instructor.save
-      redirect_to @instructor
+      redirect_to admin_instructor_path(id: @instructor.id)
     else
       puts @instructor.errors.messages
       render 'new'
@@ -24,6 +27,7 @@ class InstructorsController < ApplicationController
   end
 
   def edit
+    @admin = Admin.find(params[:admin_id])
     @instructor = Instructor.find(params[:id])
   end
 
@@ -31,7 +35,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.find(params[:id])
 
     if @instructor.update_attributes(inst_params)
-      redirect_to @instructor
+      redirect_to admin_instructor_path(id: @instructor.id)
     else
       puts @instructor.errors
       render 'edit'

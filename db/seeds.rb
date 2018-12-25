@@ -10,6 +10,6 @@ st1 = Student.create(first_name: "Christel", last_name: "Mogollon", age: 29, edu
 
 inst1 = Instructor.create(first_name: "George", last_name: "Chang", age: 45, education: "PHD", email: "gchang@sample.com", password: "111111", cohort_id: 1)
 
-cour1 = Course.create(name: "CPS-2400", class_hours: 5000, cohort_id: 1)
+course1 = Course.create(name: "CPS-2400", class_hours: 5000, cohort_id: 1)
 
-coh1 = Cohort.create(name: "Fall-08", start_date: 20181, end_date: 20182)
+cohort1 = Cohort.create(name: "Fall-08", start_date: 20181, end_date: 20182)

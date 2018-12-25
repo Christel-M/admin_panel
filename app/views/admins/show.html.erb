@@ -1,0 +1,15 @@
+<h1>Hello <%=@admin.first_name%></h1>
+
+<p>Full Name: &nbsp <%=@admin.last_name%>, <%=@admin.first_name%></p>
+<p>Email: &nbsp <%=@admin.email%></p>
+<br>
+<p><%= link_to 'Edit',  edit_admin_path %></p>
+<p><%= link_to 'Log Out',  logout_path %></p>
+
+<ul>
+  <li><%= link_to 'Create Instructor', new_admin_instructor_path(@admin.id)%></li>
+  <li><%= link_to 'Create Course', new_admin_course_path(@admin.id) %></li>
+  <li><%= link_to 'Create Student', new_admin_student_path(@admin.id) %></li>
+  <li><%= link_to 'Create Cohort',  new_admin_cohort_path(@admin.id) %></li>
+  <li><%= link_to 'Home', root_path %></li>
+</ul>

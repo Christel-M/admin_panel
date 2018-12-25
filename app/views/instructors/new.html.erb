@@ -1,7 +1,6 @@
 <h1>Create Instructor</h1>
 
-<%= form_for(@instructor) do |f|%>
-
+<%=form_for([@admin, @instructor]) do |f|%>
 <p><%= f.label :first_name, "First Name"%> <br>
   <%= f.text_field :first_name%></p>
 
