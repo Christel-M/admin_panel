@@ -1,8 +1,18 @@
+<% if session[:user_id] == nil%>
+
 <h1>Hello <%=@admin.first_name%></h1>
 
 <p>Full Name: &nbsp <%=@admin.last_name%>, <%=@admin.first_name%></p>
 <p>Email: &nbsp <%=@admin.email%></p>
+
+<% else %>
+<h1>Hello <%=@admin.first_name%></h1>
+
+<p>Full Name: &nbsp <%=@admin.last_name%>, <%=@admin.first_name%></p>
+<p>Email: &nbsp <%=@admin.email%></p>
+
 <br>
+
 <p><%= link_to 'Edit',  edit_admin_path %></p>
 <p><%= link_to 'Log Out',  logout_path %></p>
 
@@ -13,3 +23,4 @@
   <li><%= link_to 'Create Cohort',  new_admin_cohort_path(@admin.id) %></li>
   <li><%= link_to 'Home', root_path %></li>
 </ul>
+<% end %>

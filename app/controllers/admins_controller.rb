@@ -38,11 +38,11 @@ class AdminsController < ApplicationController
     @admin = Admin.all
   end
 
-  def destroy
-    @admin = nil
-    puts "logged out!"
-    redirect_to root_path
-  end
+  # def destroy
+  #   @admin = nil
+  #   puts "logged out!"
+  #   redirect_to root_path
+  # end
 
 
   private

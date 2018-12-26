@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   root 'pages#home'
+
+  resources :sessions, only: [:new, :create, :destroy]
 
   resources :admins do
     resources :courses
@@ -8,9 +11,9 @@ Rails.application.routes.draw do
     resources :cohorts
   end
 
-  # get    'admins/login',   to: 'sessions#new'
-  # post   'admins/login',   to: 'sessions#create'
-  # delete 'admins/logout',  to: 'sessions#destroy'
-  get 'logout', to: 'admins#destroy'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
+  delete 'logout', to: 'sessions#destroy'
 
 end
