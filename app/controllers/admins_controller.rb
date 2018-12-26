@@ -29,7 +29,7 @@ class AdminsController < ApplicationController
     if @admin.update_attributes(admin_params)
       redirect_to @admin
     else
-      puts @admin.errors
+      puts @admin.errors.messages
       render 'edit'
     end
   end
@@ -49,7 +49,7 @@ class AdminsController < ApplicationController
 
   def admin_params
     params.require(:admin).permit(:first_name, :last_name,
-                                   :email, :password)
+                                   :email, :password, :password_confirmation)
   end
 
 end

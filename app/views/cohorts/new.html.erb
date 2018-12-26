@@ -19,14 +19,14 @@
 
 <p><%= f.label :instructor_id, "Select Instructor"%> <br>
   <%= f.select(:instructor_id, Instructor.all.collect{ |inst|
-                                              ["#{inst.id}, #{inst.last_name}, #{inst.first_name}"]
+                                              [inst.full_name]
                                               },{include_blank: true })%>
 </p>
 
 <p>
-  <%= f.collection_check_boxes :student_ids, Student.all, :id, :first_name do |st| %>
+  <%= f.collection_check_boxes :student_ids, Student.all, :id, :full_name do |st| %>
   <%= st.check_box %>
-  <%= st.label %>
+  <%= st.label %> <br>
   <%end%>
 </p>
 

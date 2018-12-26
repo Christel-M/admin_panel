@@ -1,5 +1,10 @@
-<h1><%=@admin.first_name%> <%=@admin.last_name%></h1>
 <h2>Edit Profile</h2>
+
+<% if @admin.errors.any? %>
+  <% @admin.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
 
 <%=form_for(@admin) do |f|%>
 <p><%= f.label :first_name, "First Name"%> <br>
@@ -10,6 +15,10 @@
 
 <p><%= f.label :email%> <br>
 <%= f.email_field :email%></p>
+
+<p><%= f.label :password, "Confirm Password Before Updating Your Information"%> <br>
+  <%= f.password_field :password%>
+</p>
 
 <p>
   <%= f.submit "Update Information" %>
