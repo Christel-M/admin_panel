@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <% if current_user = session[:user_id] %>
+    <nav class="navbar">
+        <a href="/dashboard">
+          <img src="/assets/logo.png">
+        </a>
+        <a href="/dashboard">News Feed</a>
+        <a href="/articles/">My Dashboard</a>
+        <a href="/articles/create-article">Create a Post</a>
+        <span><%= link_to 'Home', admin_path(session[:user_id]) %></span>
+    </nav>
+    <%end%>
+
     <%= yield %>
   </body>
 </html>
