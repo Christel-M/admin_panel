@@ -8,7 +8,7 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new(cohort_params)
     if @cohort.valid?
       @cohort.save
-      redirect_to admin_cohort_path(id: @cohort.id)
+      redirect_to admin_cohort_path(id: @admin.id, id: @cohort.id)
     else
       puts "Error: #{@cohort.errors.messages}"
       render 'new'

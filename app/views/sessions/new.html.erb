@@ -1,19 +1,22 @@
-<h1>Log In</h1>
+<div class="container">
+  <div class="sub-container">
+    <div></div>
+    <div class="center">
 
+      <img src="/assets/logo.png"> <br> <br>
+      <h1>Log In</h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
+      <%= form_for(:session, url: login_path) do |f| %>
 
-<p>
-  <%= f.label :email %> <br>
-  <%= f.email_field :email %>
-</p>
+      <p><%= f.email_field :email, placeholder: "Email Address" %></p>
 
-<p>
-  <%= f.label :password %> <br>
-  <%= f.password_field :password %>
-</p>
+      <p><%= f.password_field :password,  placeholder: "Password" %></p>
 
-<p>
-  <%= f.submit "Log in" %>
-</p>
-<% end %>
+      <p><%= f.submit "Enter", :class => "btn-primary" %></p>
+
+      <% end %>
+    </div>
+    <div></div>
+  </div>
+
+</div>

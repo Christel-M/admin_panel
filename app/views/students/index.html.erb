@@ -1,2 +1,14 @@
-<h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+<h1>Students</h1>
+
+<ol>
+  <%@student.each do |st|%>
+  <li>
+    Full Name: &nbsp <%=st.last_name%>,  <%=st.first_name%> &nbsp
+    Age: &nbsp <%=st.age%> &nbsp
+    Education: &nbsp <%=st.education%> &nbsp
+    <%= link_to 'Info',  admin_student_path(session[:user_id], st)%> &nbsp
+    <%= link_to 'Edit',  edit_admin_student_path(session[:user_id], st)%> &nbsp
+  </li>
+
+  <%end%>
+</ol>

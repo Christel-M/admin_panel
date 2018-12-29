@@ -1,26 +1,28 @@
-<% if session[:user_id] == nil%>
+<div>
+  <% if session[:user_id] == nil%>
 
-<h1>Hello <%=@admin.first_name%></h1>
+  <h1>Hello <%=@admin.first_name%></h1>
 
-<p>Full Name: &nbsp <%=@admin.last_name%>, <%=@admin.first_name%></p>
-<p>Email: &nbsp <%=@admin.email%></p>
+  <p>Full Name: &nbsp <%=@admin.last_name%>, <%=@admin.first_name%></p>
+  <p>Email: &nbsp <%=@admin.email%></p>
 
-<% else %>
-<h1>Hello <%=@admin.first_name%></h1>
+  <% else %>
 
-<p>Full Name: &nbsp <%=@admin.last_name%>, <%=@admin.first_name%></p>
-<p>Email: &nbsp <%=@admin.email%></p>
+  <h1>Hello <%=@admin.first_name%></h1>
 
-<br>
+  <p>Full Name: &nbsp <%=@admin.last_name%>, <%=@admin.first_name%></p>
+  <p>Email: &nbsp <%=@admin.email%></p>
 
-<p><%= link_to 'Edit',  edit_admin_path %></p>
-<p><%= link_to 'Log Out',  logout_path %></p>
+  <br>
 
-<ul>
-  <li><%= link_to 'Create Instructor', new_admin_instructor_path(@admin.id)%></li>
-  <li><%= link_to 'Create Course', new_admin_course_path(@admin.id) %></li>
-  <li><%= link_to 'Create Student', new_admin_student_path(@admin.id) %></li>
-  <li><%= link_to 'Create Cohort',  new_admin_cohort_path(@admin.id) %></li>
-  <li><%= link_to 'Home', root_path %></li>
-</ul>
-<% end %>
+  <p><%= link_to 'Edit',  edit_admin_path %></p>
+  <p><%= link_to 'Log Out',  logout_path %></p>
+
+  <p><%= link_to 'Create Instructor', new_admin_instructor_path(@admin.id)%></p>
+  <p><%= link_to 'Create Course', new_admin_course_path(@admin.id) %></p>
+  <p><%= link_to 'Create Student', new_admin_student_path(@admin.id) %></p>
+  <p><%= link_to 'Create Cohort',  new_admin_cohort_path(@admin.id) %></p>
+  <p><%= link_to 'Home', root_path %></p>
+
+  <% end %>
+</div>

@@ -8,9 +8,11 @@ class AdminsController < ApplicationController
 
     if @admin.valid?
       @admin.save
+      # flash[:success] = "Account Successfully Created! Welcome #{@admin.first_name}"
       redirect_to @admin
     else
       puts @admin.errors.messages
+      # flash[:error] = "Please Try Again"
       render 'new'
     end
   end

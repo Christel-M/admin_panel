@@ -1,2 +1,16 @@
-<h1>Cohorts#index</h1>
-<p>Find me in app/views/cohorts/index.html.erb</p>
+<h1>Cohorts</h1>
+
+<ol>
+  <%@cohort.each do |ch|%>
+  <li>
+    Cohort Name: &nbsp <%=ch.name%> &nbsp
+    Start Date: &nbsp <%=ch.start_date%> &nbsp
+    End Date: &nbsp <%=ch.end_date%> &nbsp
+    Instructor: &nbsp <%=ch.instructor_id%> &nbsp
+    Course: &nbsp <%=ch.course_id%> &nbsp
+    <%= link_to 'Info',  admin_cohort_path(session[:user_id], ch)%> &nbsp
+    <%= link_to 'Edit',  edit_admin_cohort_path(session[:user_id], ch)%> &nbsp
+  </li>
+
+  <%end%>
+</ol>

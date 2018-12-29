@@ -1,2 +1,13 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
+<h1>Courses</h1>
+
+<ol>
+  <%@course.each do |cr|%>
+  <li>
+    Name: &nbsp <%=cr.name%>&nbsp
+    Class Hours: &nbsp <%=cr.class_hours%> &nbsp
+    <%= link_to 'Info',  admin_course_path(session[:user_id], cr)%> &nbsp
+    <%= link_to 'Edit',  edit_admin_course_path(session[:user_id], cr)%> &nbsp
+  </li>
+
+  <%end%>
+</ol>
