@@ -12,21 +12,27 @@
 <body>
 
   <% if session[:user_id]!= nil%>
+  <%admin = Admin.find(session[:user_id])%>
   <nav class="sidenav">
     <a href="/">
       <img src="/assets/logo.png">
     </a>
-    <a href="/">Account</a>
-    <a><%= link_to 'Dashboard', admin_path(session[:user_id]) %></a>
-    <a><%= link_to 'Courses',  admin_courses_path(session[:user_id]) %></a>
-    <a><%= link_to 'Students',  admin_students_path(session[:user_id]) %></a>
-    <a><%= link_to 'Instructors',  admin_instructors_path(session[:user_id]) %></a>
-    <a><%= link_to 'Cohorts',  admin_cohorts_path(session[:user_id]) %></a>
-    <a><%= link_to 'Log Out',  logout_path %></a>
+    <ul>
+      <li><a href="<%=admin_path(session[:user_id])%>"><%=admin.first_name%> <%=admin.last_name%></a></li>
+      <li><a href="<%=root_path(session[:user_id])%>">Dashboard</a></li>
+      <li><a href="<%=admin_courses_path(session[:user_id])%>">Courses</a></li>
+      <li><a href="<%=admin_students_path(session[:user_id])%>">Students</a></li>
+      <li><a href="<%=admin_instructors_path(session[:user_id])%>">Instructors</a></li>
+      <li><a href="<%=admin_cohorts_path(session[:user_id])%>">Cohorts</a></li>
+      <li><a href="<%=logout_path%>">Log Out</a>
+    </ul>
   </nav>
   <%end%>
 
   <div class="main">
+    <% flash.each do |key, value| %>
+      <div class="alert-<%= key %>"><%= value %></div>
+    <% end %>
     <%= yield %>
   </div>
 

@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
     if @course.valid?
       @course.save
-      redirect_to admin_course_path(id: @course.id)
+      redirect_to admin_courses_path
     else
       puts @course.errors.messages
       render 'new'

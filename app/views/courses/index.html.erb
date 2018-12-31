@@ -1,7 +1,7 @@
 <h1>Courses</h1>
 
 <ol>
-  <%@course.each do |cr|%>
+  <%@course.reverse.each do |cr|%>
   <li>
     Name: &nbsp <%=cr.name%>&nbsp
     Class Hours: &nbsp <%=cr.class_hours%> &nbsp

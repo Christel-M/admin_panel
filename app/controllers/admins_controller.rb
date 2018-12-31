@@ -8,11 +8,11 @@ class AdminsController < ApplicationController
 
     if @admin.valid?
       @admin.save
-      # flash[:success] = "Account Successfully Created! Welcome #{@admin.first_name}"
+      flash[:success] = "Account Successfully Created! Welcome #{@admin.first_name}"
       redirect_to @admin
     else
       puts @admin.errors.messages
-      # flash[:error] = "Please Try Again"
+      flash[:error] = "Please Try Again"
       render 'new'
     end
   end
@@ -29,15 +29,18 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
 
     if @admin.update_attributes(admin_params)
+      flash[:success] = "Account Updated"
       redirect_to @admin
     else
       puts @admin.errors.messages
+      flash[:error] = "Error. Please try again"
       render 'edit'
     end
   end
 
   def index
     @admin = Admin.all
+    redirect_to root_path
   end
 
   # def destroy

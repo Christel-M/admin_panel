@@ -15,21 +15,31 @@
   </div>
 
 <% else %>
+<%admin = Admin.find(session[:user_id])%>
 
-  <div class="sub-container">
-    <div>
-      <%admin = Admin.find(session[:user_id])%>
-      <h1>Hello <%=admin.first_name%></h1>
-      <h3>You are still logged in!</h3>
+<h1 class="center">Dashboard</h1>
 
-      <ul>
-        <li><%= link_to 'Home', admin_path(session[:user_id]) %> </li>
-        <li><%= link_to 'Create Instructor', new_admin_instructor_path(session[:user_id])%></li>
-        <li><%= link_to 'Create Course', new_admin_course_path(session[:user_id]) %></li>
-        <li><%= link_to 'Create Student', new_admin_student_path(session[:user_id]) %></li>
-        <li><%= link_to 'Create Cohort',  new_admin_cohort_path(session[:user_id]) %></li>
-        <li><%= link_to 'logout', logout_path %> </li>
-      </ul>
+
+  <div class="dashboard">
+    <div class="card center">
+      <h3><%= link_to 'Instructors', admin_instructors_path(session[:user_id])%></h3>
+      <img src="http://worldartsme.com/images/google-free-teacher-clipart-1.jpg">
+      <h4><%= link_to 'Create Instructor', new_admin_instructor_path(session[:user_id])%></h4>
+    </div>
+    <div class="card center">
+      <h3><%= link_to 'Students', admin_students_path(session[:user_id]) %></h3>
+      <img src="https://openclipart.org/download/284854/publicdomainq-0004934crltvo.svg">
+      <h4><%= link_to 'Create Student', new_admin_student_path(session[:user_id]) %></h4>
+    </div>
+    <div class="card center">
+      <h3><%= link_to 'Courses', admin_courses_path(session[:user_id]) %></h3>
+      <img src="http://png.clipart-library.com/images4/2/book-clipart-transparent-8.png">
+      <h4><%= link_to 'Create Course', new_admin_course_path(session[:user_id]) %></h4>
+    </div>
+    <div class="card center">
+      <h3><%= link_to 'Cohorts', admin_cohorts_path(session[:user_id]) %></h3>
+      <img src="https://dumielauxepices.net/sites/default/files/school-clipart-clipart-library-class-752403-1553543.png">
+      <h4><%= link_to 'Create Cohort',  new_admin_cohort_path(session[:user_id]) %></h4>
     </div>
   </div>
 
