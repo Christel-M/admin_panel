@@ -21,9 +21,9 @@
 body {
   margin: 0;
   bottom: 0;
-  background-color: #fffff;
-  /* background-color: #a28dc0; */
-  /* background: url("https://www.desktopbackground.org/download/1024x768/2013/10/10/652057_themes-ive-used-sailor-moon-inspired-backgrounds-part-2-part-1_1280x960_h.jpg") no-repeat 50% 50% fixed; */
+  /* background-color: #fffff; */
+  background-color: #fdd5ac;
+  background: url("https://i.pinimg.com/originals/e9/46/2a/e9462a3818f6cebf83bde879e6dc94ff.png") no-repeat 50% 50% fixed;
   background-size: cover;
   /* background-blend-mode: overlay; */
   font-family: 'Noto Sans TC', sans-serif;
