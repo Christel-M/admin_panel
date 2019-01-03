@@ -14,18 +14,24 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC');
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC");
+@import "animations";
 
 
 body {
+  margin: 0;
   bottom: 0;
-  background-color: #f1f1f1;
+  background-color: #fffff;
   /* background-color: #a28dc0; */
   /* background: url("https://www.desktopbackground.org/download/1024x768/2013/10/10/652057_themes-ive-used-sailor-moon-inspired-backgrounds-part-2-part-1_1280x960_h.jpg") no-repeat 50% 50% fixed; */
   background-size: cover;
   /* background-blend-mode: overlay; */
   font-family: 'Noto Sans TC', sans-serif;
   color: #000000;
+}
+
+a {
+  text-decoration: none;
 }
 
 .sidenav {
@@ -46,13 +52,12 @@ body {
 
 .sidenav ul li {
   list-style-type: none;
-  /* padding-left: 0; */
+  padding-left: 0;
   margin: 0;
 }
 
 .sidenav a {
   padding: 15px 8px 15px 30px;
-  text-decoration: none;
   font-size: 1.2em;
   color: #ffffff;
   display: block;
@@ -68,14 +73,24 @@ body {
   padding-top: 15%;
   width: 100%;
 }
-/*
-@media screen and (max-width: 650px) {
-  .sidenav {
-    padding-top: .5%;
-  }
-  .sidenav a {
-    font-size: .95em;
-  }
+
+/* #profile {
+  background-color:#faa680;
+}
+#dashboard {
+  background-color:#f38a86;
+}
+#course {
+  background-color:#faa680;
+}
+#student {
+  background-color:#ffd068;
+}
+#instructor {
+  background-color:#b1ffaf;
+}
+#cohort {
+  background-color:#dcb0ff;
 } */
 
 .center {
@@ -83,9 +98,13 @@ body {
   text-align: center;
 }
 
+.hidden {
+  display: none;
+}
+
 .main {
-  margin-left: 15%;
-  padding: 0px 10px;
+    margin-left: 15%;
+    padding: 0px 10px;
 }
 
 .container {
@@ -99,7 +118,7 @@ body {
   width: 100%;
   display: inline-grid;
   position: fixed;
-  grid-template: 100% / 3% 60% 37%;
+  grid-template: 100% / 10% 50% 25%;
   grid-gap: 1%;
   padding-top: 10%;
 }
@@ -122,25 +141,73 @@ body {
   width: 100%;
   display: inline-grid;
   position: absolute;
-  grid-template: 300px 300px / repeat(2, 35%);
-  grid-gap: 5%;
+  grid-template: repeat(2, 250px) / repeat(2, 30%);
+  grid-gap: 10%;
   justify-content: center;
 }
 
 .card {
-  box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.4);
-  padding: 16px;
-  background-color: #ffdf50;
-  border-radius: 3%;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
-  box-shadow: 0 8px 8px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-.card img {
-  height: 100px;
+
+.card-grid {
+  width: 100%;
+  height: 100%;
+  display: inline-grid;
+  position: relative;
+  grid-template: 80% 20% / 100%;
+  justify-content: center;
 }
+
+.card-top {
+  width: 100%;
+  height: 100%;
+  display: inline-grid;
+  position: relative;
+  grid-template: 100% / repeat(2, 50%);
+  background-color: rgb(238,174,202);
+  background-image: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(44,181,232,1) 100%);
+}
+
+.card-top:hover {
+  background-color: rgb(10,71,133);
+}
+
+.card-top img {
+  height: 100%;
+  /* border-radius: 50%; */
+  position: relative;
+}
+
+.card-top a {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.card-bottom {
+  width: 100%;
+  height: 100%;
+  display: inline-grid;
+  position: relative;
+  grid-template: 100% / repeat(2, 50%);
+  background-color: #ffffff;
+}
+
+.card-bottom div:nth-child(1){
+  border-right: 2px solid #cecece;
+}
+/* .card-bottom div:nth-child(1):hover{
+  background-image: linear-gradient(216deg, rgba(245,222,50,1) 0%, rgba(241,182,48,1) 100%);
+}
+.card-bottom div:nth-child(2):hover{
+  background-image: linear-gradient(216deg, rgba(245,222,50,1) 0%, rgba(241,182,48,1) 100%);
+} */
+
 
 .btn-primary {
   display:inline-block;
@@ -178,13 +245,27 @@ body {
 }
 
 /*************Flash Alerts *************/
+.alert {
+  color: white;
+  font-size: 1em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  /* opacity: 1; */
+  /* transition: opacity 0.6s; */
+  /* display: none; */
+  animation-name: animatetop;
+  animation-duration: 2s;
+}
 
 .alert-success {
-  background-color: rgba(8,80,155, .6);
-  color: white;
+  background-color: rgb(86,173,56);
+}
+
+.alert-notice {
+  background-color: rgb(52,155,245);
 }
 
 .alert-error {
-  background-color: rgba(255,0,0, .6);
-  color: white;
+  background-color: rgb(235,70,45);
 }

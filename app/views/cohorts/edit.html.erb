@@ -1,3 +1,4 @@
+<body id="cohort">
 <h1>Edit <%=@cohort.name%></h1>
 
 <%= form_for([@admin, @cohort]) do |f|%>
@@ -14,16 +15,16 @@
 <p><%= f.label :course, "Select Course"%> <br>
   <%= f.select(:course_id, Course.all.collect{ |cr|
                                               ["#{cr.id}, #{cr.name}"]
-                                              },{include_blank: true })%>
+                                              },{ :selected => @cohort.id})%>
 </p>
 
 <p><%= f.label :instructor, "Select Instructor"%> <br>
   <%= f.select(:instructor_id, Instructor.all.collect{ |inst|
                                               ["#{inst.id}, #{inst.full_name}"]
-                                              },{include_blank: true })%>
+                                              },{ :selected => @cohort.id})%>
 </p>
 
-<p>
+<p><%= f.label :student, "Select Students"%> <br>
   <%= f.collection_check_boxes :student_ids, Student.all, :id, :full_name do |st| %>
   <%= st.check_box %>
   <%= st.label %> <br>
@@ -35,3 +36,5 @@
 </p>
 
 <%end%>
+
+</body>

@@ -1,13 +1,16 @@
+<body id="course">
 <h1>Courses</h1>
 
 <ol>
   <%@course.reverse.each do |cr|%>
-  <li>
+  <li id="course-<%=cr.id%>">
     Name: &nbsp <%=cr.name%>&nbsp
     Class Hours: &nbsp <%=cr.class_hours%> &nbsp
     <%= link_to 'Info',  admin_course_path(session[:user_id], cr)%> &nbsp
     <%= link_to 'Edit',  edit_admin_course_path(session[:user_id], cr)%> &nbsp
+    <%= link_to "Delete", admin_course_path(session[:user_id], cr), remote: true, method: :delete, data: { confirm: 'Are you sure?'}%>
   </li>
 
   <%end%>
 </ol>
+</body>

@@ -10,31 +10,45 @@
 </head>
 
 <body>
+  <div id="alerts" class="center ">
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
 
   <% if session[:user_id]!= nil%>
-  <%admin = Admin.find(session[:user_id])%>
   <nav class="sidenav">
     <a href="/">
       <img src="/assets/logo.png">
     </a>
     <ul>
-      <li><a href="<%=admin_path(session[:user_id])%>"><%=admin.first_name%> <%=admin.last_name%></a></li>
-      <li><a href="<%=root_path(session[:user_id])%>">Dashboard</a></li>
-      <li><a href="<%=admin_courses_path(session[:user_id])%>">Courses</a></li>
-      <li><a href="<%=admin_students_path(session[:user_id])%>">Students</a></li>
-      <li><a href="<%=admin_instructors_path(session[:user_id])%>">Instructors</a></li>
-      <li><a href="<%=admin_cohorts_path(session[:user_id])%>">Cohorts</a></li>
+      <li id=""><a href="<%=admin_path(session[:user_id])%>">My Profile</a></li>
+      <li ><a href="<%=root_path(session[:user_id])%>">Dashboard</a></li>
+      <li ><a href="<%=admin_courses_path(session[:user_id])%>">Courses</a></li>
+      <li ><a href="<%=admin_students_path(session[:user_id])%>">Students</a></li>
+      <li ><a href="<%=admin_instructors_path(session[:user_id])%>">Instructors</a></li>
+      <li ><a href="<%=admin_cohorts_path(session[:user_id])%>">Cohorts</a></li>
       <li><a href="<%=logout_path%>">Log Out</a>
-    </ul>
-  </nav>
-  <%end%>
+      </ul>
+    </nav>
+    <%end%>
 
-  <div class="main">
-    <% flash.each do |key, value| %>
-      <div class="alert-<%= key %>"><%= value %></div>
-    <% end %>
-    <%= yield %>
-  </div>
+    <div class="main">
+      <%= yield %>
+    </div>
 
-</body>
-</html>
+    <!-- <script> -->
+
+      <!-- // console.log("testing");
+      //
+      // let alertbx = document.getElementById('alerts');
+      // console.log(alertbx);
+      // alertbx.addEventListener("load", setTimeout(function (){
+      //   let alertbox = document.querySelector('.alert');
+      //   alertbox.classList.add("hidden");
+      // }, 1000)); -->
+
+
+    <!-- </script> -->
+  </body>
+  </html>

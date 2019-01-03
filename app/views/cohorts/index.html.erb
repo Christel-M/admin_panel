@@ -1,3 +1,4 @@
+<body id="cohort">
 <h1>Cohorts</h1>
 
 <ol>
@@ -6,11 +7,25 @@
     Cohort Name: &nbsp <%=ch.name%> &nbsp
     Start Date: &nbsp <%=ch.start_date%> &nbsp
     End Date: &nbsp <%=ch.end_date%> &nbsp
+
+    <%if ch.instructor != nil%>
     Instructor: &nbsp <%=ch.instructor.full_name%> &nbsp
+    <%else%>
+    No instructor added! <%=link_to 'Add Instructor', edit_admin_cohort_path(session[:user_id], ch)%>
+    <%end%>
+
+    <%if ch.course != nil%>
     Course: &nbsp <%=ch.course.name%> &nbsp
+    <%else%>
+    No course added! <%=link_to 'Add Course', edit_admin_cohort_path(session[:user_id], ch)%>
+    <%end%>
+
     <%= link_to 'Info',  admin_cohort_path(session[:user_id], ch)%> &nbsp
     <%= link_to 'Edit',  edit_admin_cohort_path(session[:user_id], ch)%> &nbsp
+    <%= link_to "Delete", admin_cohort_path(session[:user_id], ch), remote: true, method: :delete, data: { confirm: 'Are you sure?'}, class: 'delete-item'%>
   </li>
 
   <%end%>
 </ol>
+
+</body>

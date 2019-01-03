@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    user = Admin.new
   end
 
   def create
@@ -19,6 +20,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     puts "logged out!"
+    # flash[:notice] = "Good Bye!"
     redirect_to root_path
 
   end

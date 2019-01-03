@@ -1,3 +1,4 @@
+<body id="cohort">
 <h1>Create Cohort</h1>
 
 <%= form_for([@admin, @cohort]) do |f|%>
@@ -23,7 +24,7 @@
                                               },{include_blank: true })%>
 </p>
 
-<p>
+<p><%= f.label :student, "Select Students"%> <br>
   <%= f.collection_check_boxes :student_ids, Student.all, :id, :full_name do |st| %>
   <%= st.check_box %>
   <%= st.label %> <br>
@@ -38,3 +39,5 @@
 
 <br><br>
 <%= link_to 'Home', root_path %>
+
+</body>

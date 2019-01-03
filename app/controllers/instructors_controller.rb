@@ -5,16 +5,16 @@ class InstructorsController < ApplicationController
   end
 
   def create
-    # @admin = Admin.find(params[:admin_id])
     @instructor = Instructor.new(inst_params)
 
     if @instructor.valid?
-      # @instructor.admin_id = params[:admin_id]
       @instructor.save
-      redirect_to admin_instructor_path(id: @instructor.id)
+      flash[:success] = "Instructor Added!"
+      redirect_to admin_instructors_path
     else
       puts @instructor.errors.messages
-      render 'new'
+      flash[:error] = "#{@instructor.errors.full_messages}"
+      redirect_to new_admin_instructor_path
     end
   end
 
@@ -35,11 +35,19 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.find(params[:id])
 
     if @instructor.update_attributes(inst_params)
-      redirect_to admin_instructor_path(id: @instructor.id)
+      flash[:success] = "Instructor Information Updated!"
+      redirect_to admin_instructors_path
     else
       puts @instructor.errors
-      render 'edit'
+      flash[:error] = "#{@instructor.errors.full_messages}"
+      redirect_to edit_admin_instructor_path
     end
+  end
+
+  def destroy
+    @instructor = Instructor.find(params[:id])
+    @instructor.destroy
+
   end
 
   private

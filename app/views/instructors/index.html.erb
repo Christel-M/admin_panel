@@ -1,3 +1,4 @@
+<body id="instructor">
 <h1>Instructors</h1>
 
 <ol>
@@ -9,7 +10,10 @@
     Education: &nbsp <%=inst.education%> &nbsp
     <%= link_to 'Info',  admin_instructor_path(session[:user_id], inst)%> &nbsp
     <%= link_to 'Edit',  edit_admin_instructor_path(session[:user_id], inst)%> &nbsp
+    <%= link_to "Delete", admin_instructor_path(session[:user_id], inst), remote: true, method: :delete, data: { confirm: 'Are you sure?'}, class: 'delete-item'%>
   </li>
 
   <%end%>
 </ol>
+
+</body>

@@ -8,10 +8,12 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new(cohort_params)
     if @cohort.valid?
       @cohort.save
-      redirect_to admin_cohort_path(id: @cohort.id)
+      flash[:success] = "Cohort Created!"
+      redirect_to admin_cohorts_path
     else
       puts "Error: #{@cohort.errors.messages}"
-      render 'new'
+      flash[:error] = "#{@cohort.errors.full_messages}"
+      redirect_to new_admin_cohort_path
     end
   end
 
@@ -30,12 +32,20 @@ class CohortsController < ApplicationController
 
   def update
     @cohort = Cohort.find(params[:id])
-    if @cohort.update_attributes(cohort_params)
-      redirect_to admin_cohort_path(id: @cohort.id)
+    if @cohort.update(cohort_params)
+      flash[:success] = "Cohort Information Updated!"
+      redirect_to admin_cohorts_path
     else
       puts @cohort.errors.messages
-      render 'edit'
+      flash[:error] = "#{@cohort.errors.full_messages}"
+      redirect_to edit_admin_cohort_path
     end
+  end
+
+  def destroy
+    @cohort = Cohort.find(params[:id])
+    @cohort.destroy
+
   end
 
   private

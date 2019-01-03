@@ -9,10 +9,12 @@ class StudentsController < ApplicationController
 
     if @student.valid?
       @student.save
-      redirect_to admin_student_path(id: @student.id)
+      flash[:success] = "Student Created!"
+      redirect_to admin_students_path
     else
       puts @student.errors.messages
-      render 'new'
+      flash[:error] = "#{@student.errors.full_messages}"
+      redirect_to new_admin_student_path
     end
   end
 
@@ -33,14 +35,20 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
 
     if @student.update_attributes(st_params)
-      redirect_to admin_student_path(id: @student.id)
+      flash[:success] = "Student Information Updated!"
+      redirect_to admin_students_path
     else
       puts @student.errors
-      render 'edit'
+      flash[:error] = "#{@student.errors.full_messages}"
+      redirect_to edit_admin_student_path
     end
   end
 
-  #don't forget to create destroy!
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+
+  end
 
   private
 

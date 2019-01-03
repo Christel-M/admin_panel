@@ -1,11 +1,5 @@
+<body id="instructor">
 <h1>Create Instructor</h1>
-
-<% if @instructor.errors.any? %>
-  <% @instructor.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-<% end %>
-
 <%=form_for([@admin, @instructor]) do |f|%>
 <p><%= f.label :first_name, "First Name"%> <br>
   <%= f.text_field :first_name%></p>
@@ -30,3 +24,5 @@
 
 <br><br>
 <%= link_to 'Home', root_path %>
+
+</body>
