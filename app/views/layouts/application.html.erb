@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div id="alerts" class="center ">
+  <div id="alerts" class="center animate-up">
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
@@ -19,7 +19,8 @@
   <% if session[:user_id]!= nil%>
   <nav class="sidenav">
     <a href="/">
-      <img src="/assets/logo.png">
+      <h3>Luna's School</h3>
+      <!-- <img src="/assets/logo.png"> -->
     </a>
     <ul>
       <li id=""><a href="<%=admin_path(session[:user_id])%>">My Profile</a></li>
@@ -46,7 +47,7 @@
       alertbx.addEventListener("load", setTimeout(function (){
         let alertbox = document.querySelector('.alert');
         alertbox.classList.add("hidden");
-      }, 1000));
+      }, 2000));
 
 
     </script>

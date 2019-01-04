@@ -1,34 +1,93 @@
-<div class="container">
-  <div class="sub-container">
-    <div></div>
-    <div class="center">
-      <h1>Create Account</h1>
+<body id="account-bg">
 
-      <% if @admin.errors.any? %>
-      <% @admin.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-      <% end %>
-      <% end %>
+<style media="screen">
+input[type=text], input[type=email], input[type=password]{
+  width: 75%;
+  background-color: #e3e3e3;
+  font-size: .87em;
+  padding: 10px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 
+input[type=text]{
+  background-image: url("https://cdn3.iconfinder.com/data/icons/seo-marketing-19/32/SEO-10-512.png");
+  background-size: 12%;
+  background-position: 5%;
+  background-repeat: no-repeat;
+  padding-left: 14%;
+}
 
-      <%= form_for(@admin) do |f|%>
+input[type=email]{
+  background-image: url("https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/mail-512.png");
+  background-size: 12%;
+  background-position: 5%;
+  background-repeat: no-repeat;
+  padding-left: 14%;
+}
 
-      <p><%= f.text_field :first_name, placeholder: "First Name" %> &nbsp
+input[type=password]{
+  background-image: url("https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/lock-512.png");
+  background-size: 11%;
+  background-position: 5%;
+  background-repeat: no-repeat;
+  padding-left: 14%;
+}
 
-      <%= f.text_field :last_name, placeholder: "Last Name" %></p>
+input[type=submit] {
+  width: 75%;
+  display:inline-block;
+  position:relative;
+  padding:10px 25px;
+  border:2px solid #ffecf6;
+  color:#ffecf6;
+  background-color: #f16f9d;
+  font-size:1.1em;
+  text-decoration:none;
+  transition: color 0.4s
+}
 
-      <p><%= f.email_field :email, placeholder: "Email Address" %></p>
+input[type=submit]:hover {
+  color:#f16f9d;
+  background-color: #ffecf6;
+}
+</style>
 
-      <p><%= f.password_field :password, placeholder: "Password" %> &nbsp
-        <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-      </p>
+  <div class="container">
+    <div class="sub-container">
+      <div class="account-grid center">
+        <div class="animate-down">
+          <h1>Sign Up</h1>
 
-      <p>
-        <%= f.submit "Create Account", :class => "btn-primary" %>
-      </p>
+          <%= form_for(@admin) do |f|%>
+            <%= f.text_field :first_name, placeholder: "First Name" %>
 
-      <%end%>
+            <%= f.text_field :last_name, placeholder: "Last Name" %>
+
+              <%= f.email_field :email, placeholder: "Email Address" %>
+
+              <%= f.password_field :password, placeholder: "Password" %>
+              <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %> <br>
+
+              <%= f.submit "Create Account"%>
+
+            <%end%>
+          </div>
+
+          <div class="animate-up">
+            <h1>Luna's School</h1>
+            <!-- <img src="/assets/logo.png"> -->
+            <h2>Create An Account</h2>
+            <h4>Already Have An Account?</h4>
+            <h4><%= link_to 'Sign In', login_path, class: 'btn-account'%></h4>
+
+            <% if @admin.errors.any? %>
+            <% @admin.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div></div>
-  </div>
-</div>
+  </body>

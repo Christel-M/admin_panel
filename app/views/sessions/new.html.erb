@@ -1,22 +1,83 @@
-<div class="container">
-  <div class="sub-container">
-    <div></div>
-    <div class="center">
+<body id="account-bg">
 
-      <img src="/assets/logo.png"> <br> <br>
-      <h1>Log In</h1>
+<style media="screen">
+input[type=text], input[type=email], input[type=password]{
+  width: 75%;
+  background-color: #e3e3e3;
+  font-size: .87em;
+  padding: 10px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 
-      <%= form_for(:session, url: login_path) do |f| %>
+input[type=text]{
+  background-image: url("https://cdn3.iconfinder.com/data/icons/seo-marketing-19/32/SEO-10-512.png");
+  background-size: 12%;
+  background-position: 5%;
+  background-repeat: no-repeat;
+  padding-left: 14%;
+}
 
-      <p><%= f.email_field :email, placeholder: "Email Address" %></p>
+input[type=email]{
+  background-image: url("https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/mail-512.png");
+  background-size: 12%;
+  background-position: 5%;
+  background-repeat: no-repeat;
+  padding-left: 14%;
+}
 
-      <p><%= f.password_field :password,  placeholder: "Password" %></p>
+input[type=password]{
+  background-image: url("https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/lock-512.png");
+  background-size: 11%;
+  background-position: 5%;
+  background-repeat: no-repeat;
+  padding-left: 14%;
+}
 
-      <p><%= f.submit "Enter", :class => "btn-primary" %></p>
+input[type=submit] {
+  width: 75%;
+  display:inline-block;
+  position:relative;
+  padding:10px 25px;
+  border:2px solid #f16f9d;
+  color:#f16f9d;
+  font-size:1.1em;
+  text-decoration:none;
+  transition: color 0.4s
+}
 
-      <% end %>
+input[type=submit]:hover {
+  color:#ffffff;
+  background-color: #f16f9d;
+}
+</style>
+
+  <div class="container">
+    <div class="sub-container">
+      <div class="account-grid center">
+        <div class="animate-up">
+          <h1>Luna's School</h1>
+          <h2>Welcome Back</h2>
+          <h4>Don't Have An Account?</h4>
+          <h4><%= link_to 'Sign Up', new_admin_path, class: 'btn-login'%></h4>
+          <!-- <img src="/assets/logo.png"> -->
+        </div>
+
+        <div class="animate-down">
+
+          <h1>Log In</h1>
+
+          <%= form_for(:session, url: login_path) do |f| %>
+
+          <%= f.email_field :email, placeholder: "Email Address" %>
+
+          <%= f.password_field :password,  placeholder: "Password" %> <br>
+
+          <%= f.submit "Enter"%>
+
+          <% end %>
+        </div>
+      </div>
     </div>
-    <div></div>
   </div>
-
-</div>
+</body>

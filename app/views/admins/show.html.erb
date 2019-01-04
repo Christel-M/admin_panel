@@ -1,15 +1,20 @@
-<body id="profile">
   <% if session[:user_id] == nil%>
+  <div class="container">
+    <div class="sub-container center">
+        <div class="animate-down">
+          <h1>You have no access to this site!!</h1>
+          <%= link_to 'Sign Up', new_admin_path, class: "btn btn-primary"%>
+          <%= link_to 'Log In', login_path, class: "btn btn-primary"%>
+        </div>
+    </div>
+  </div>
 
-  <h1>You have no access to this site!!</h1>
-  <p><%= link_to 'Log in', login_path %></p>
 
 
   <!-- <h1>Hello <%=@admin.first_name%></h1>
 
   <p>Full Name: &nbsp <%=@admin.last_name%>, <%=@admin.first_name%></p>
   <p>Email: &nbsp <%=@admin.email%></p> -->
-
   <% else %>
 
   <h1>Hello <%=@admin.first_name%></h1>
@@ -29,5 +34,3 @@
   <p><%= link_to 'Home', root_path %></p> -->
 
   <% end %>
-
-</body>

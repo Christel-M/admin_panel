@@ -33,7 +33,7 @@ class CohortsController < ApplicationController
   def update
     @cohort = Cohort.find(params[:id])
     if @cohort.update(cohort_params)
-      flash[:success] = "Cohort Information Updated!"
+      flash[:notice] = "Cohort Information Updated!"
       redirect_to admin_cohorts_path
     else
       puts @cohort.errors.messages

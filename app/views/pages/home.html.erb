@@ -1,24 +1,10 @@
-<body id="dashboard">
 <div class="container">
-<% if session[:user_id] == nil %>
 
-  <div class="sub-container ">
-    <div></div>
-    <div class="center">
-      <img src="/assets/logo.png"> <br> <br>
-      <!-- <p><%= link_to 'I\'m a Teacher', login_path, :class => "btn-primary" %></p>
-      <p><%= link_to 'I\'m a Student', login_path, :class => "btn-primary" %></p> -->
-      <!-- <p><%= link_to 'I\'m an Administator', login_path, :class => "btn-primary" %></p> -->
-      <p><%= link_to 'Log In', login_path, :class => "btn-primary" %></p>
-      <p><%= link_to 'Create Account', new_admin_path, :class => "btn-primary" %></p>
-    </div>
-    <div></div>
-  </div>
+  <% if session[:user_id] != nil%>
+  <h1 class="center">Dashboard</h1>
+  <hr>
+  <br> <br>
 
-<% else %>
-<h1 class="center">Dashboard</h1>
-<hr>
-<br> <br>
   <div class="dashboard">
 
     <div class="card">
@@ -97,7 +83,6 @@
       </div>
     </div>
 
-<% end %>
-</div>
+  </div>
 
-</body>
+  <% end %>

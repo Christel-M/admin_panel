@@ -1,4 +1,16 @@
-@keyframes animatetop {
+.animate-up{
+  position: relative;
+  animation-name: animateup;
+  animation-duration: 1s;
+}
+
+.animate-down{
+  position: relative;
+  animation-name: animatedown;
+  animation-duration: 1s;
+}
+
+@keyframes animateup {
   from {
     top:-300px;
     opacity:1

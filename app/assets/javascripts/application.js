@@ -15,18 +15,4 @@
 //= require turbolinks
 //= require_tree .
 
-// console.log("works");
-//
-// var sidetab = document.getElementsByTagName("li");
-// // console.log(sidetab);
-//
-// for(let i = 0; i < sidetab.length; i++) {
-//   // console.log(sidetab[i]);
-//   sidetab[i].addEventListener("click", changeColor) ;
-//
-//   function changeColor(){
-//     var activelink = document.getElementById('profile')
-//     console.log(activelink);
-//     // activelink.setAttribute("id", " ");
-//   }
-// }
+console.log("works");

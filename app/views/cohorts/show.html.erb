@@ -8,11 +8,15 @@
 <p>Course: &nbsp <%=@cohort.course.name%></p>
 
 <p>Students in this Cohort:</p>
+<%if !@cohort.students.empty?%>
 <ul>
   <%@cohort.students.each do |st|%>
   <li><%=st.full_name%></li>
   <%end%>
 </ul>
+  <%else%>
+  <p>No student added!</p>
+  <%end%>
 
 <br>
 

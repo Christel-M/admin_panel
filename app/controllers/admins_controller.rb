@@ -12,7 +12,7 @@ class AdminsController < ApplicationController
       redirect_to @admin
     else
       puts @admin.errors.messages
-      flash[:error] = "Please Try Again"
+      # flash[:error] = "Please Try Again"
       render 'new'
     end
   end
@@ -42,13 +42,6 @@ class AdminsController < ApplicationController
     @admin = Admin.all
     redirect_to root_path
   end
-
-  # def destroy
-  #   @admin = nil
-  #   puts "logged out!"
-  #   redirect_to root_path
-  # end
-
 
   private
 

@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
   def new
-    user = Admin.new
+    admin = Admin.new
   end
 
   def create
-    user = Admin.find_by_email(params[:session][:email])
+    admin = Admin.find_by_email(params[:session][:email])
 
-    if user && user.authenticate(params[:session][:password])
-      flash[:success] = "Welcome #{user.first_name}"
-      session[:user_id] = user.id
+    if admin && admin.authenticate(params[:session][:password])
+      flash[:success] = "Welcome #{admin.first_name}"
+      session[:user_id] = admin.id
       redirect_to root_path
     else
       flash[:error] = "Incorrect email address or password. Please try again"
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     puts "logged out!"
     # flash[:notice] = "Good Bye!"
-    redirect_to root_path
+    redirect_to login_path
 
   end
 
