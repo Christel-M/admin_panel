@@ -23,7 +23,7 @@
       <!-- <img src="/assets/logo.png"> -->
     </a>
     <ul>
-      <li id=""><a href="<%=admin_path(session[:user_id])%>">My Profile</a></li>
+      <li><a href="<%=admin_path(session[:user_id])%>">My Profile</a></li>
       <li ><a href="<%=root_path(session[:user_id])%>">Dashboard</a></li>
       <li ><a href="<%=admin_courses_path(session[:user_id])%>">Courses</a></li>
       <li ><a href="<%=admin_students_path(session[:user_id])%>">Students</a></li>

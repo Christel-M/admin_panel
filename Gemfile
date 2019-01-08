@@ -18,6 +18,9 @@ gem 'uglifier', '>= 1.3.0'
 #password encryption
 gem 'bcrypt'
 
+####
+#gem 'carrierwave'
+
 gem 'sentry-raven'
 
 # Use CoffeeScript for .coffee assets and views

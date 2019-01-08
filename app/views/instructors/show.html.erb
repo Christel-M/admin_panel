@@ -1,13 +1,28 @@
-<body id="instructor">
+<div class="profile center">
+  <div class="profile-card center">
+    <div>
+      <div class="default"><%="#{@instructor.initials}"%></div>
+    </div>
 
-<h1><%=@instructor.first_name%>'s Profile</h1>
+    <div>
+      <h1><%=@instructor.first_name.capitalize%>'s Profile</h1>
 
-<p>Full Name: &nbsp <%=@instructor.last_name%>, <%=@instructor.first_name%></p>
-<p>Age: &nbsp <%=@instructor.age%></p>
-<p>Salary: &nbsp <%=@instructor.salary%></p>
-<p>Education: &nbsp <%=@instructor.education%></p>
+      <h4>Full Name: &nbsp <%=@instructor.full_name%></h4>
+      <h4>Age: &nbsp <%=@instructor.age%></h4>
+      <h4>Education: &nbsp <%=@instructor.education%></h4>
+      <hr>
+      <a class="icons" href="<%= edit_admin_instructor_path %>">
+        <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
+      </a> &nbsp &nbsp &nbsp
+      <span class="icons">
+        <%= link_to admin_instructor_path(@instructor), remote: true, method: :delete, data: {confirm: 'Are you sure?'} do %>
+        <%= image_tag("https://img.icons8.com/bubbles/100/000000/delete.png") %>
+        <% end %>
+      </span>  &nbsp &nbsp &nbsp
+      <a class="icons" href="<%= admin_instructors_path %>">
+        <img src="https://img.icons8.com/bubbles/500/000000/transaction-list.png">
+      </a>
 
-<br>
-<%= link_to 'Edit',  edit_admin_instructor_path %>
-
-</body>
+    </div>
+  </div>
+</div>

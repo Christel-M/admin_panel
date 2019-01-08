@@ -1,25 +1,49 @@
-<body id="cohort">
-<h1><%=@cohort.name%></h1>
+<div class="cohort">
+  <div class="cohort-card">
+    <div>
+      <div class="default"><%="#{@cohort.name.chars.first.capitalize}"%></div>
+    </div>
 
-<p>Cohort Name: &nbsp <%=@cohort.name%></p>
-<p>Start Date: &nbsp <%=@cohort.start_date%></p>
-<p>End Date: &nbsp <%=@cohort.end_date%></p>
-<p>Instructor: &nbsp  <%=@cohort.instructor.full_name%></p>
-<p>Course: &nbsp <%=@cohort.course.name%></p>
+    <div>
+      <h4>Cohort Name: &nbsp<%=@cohort.name.capitalize%></h4>
+      <h4>Start Date: &nbsp <%=@cohort.start_date%></h4>
+      <h4>End Date: &nbsp <%=@cohort.end_date%></h4>
+      <%if @cohort.course.present?%>
+      <h4>Course: &nbsp  <%=@cohort.course.name%></h4>
+      <%else%>
+      <h4>No Course Added</h4>
+      <%end%>
+      <%if @cohort.instructor.present?%>
+      <h4>Instructor: &nbsp  <%=@cohort.instructor.full_name%></h4>
+      <%else%>
+      <h4>No Instructor Added</h4>
+      <%end%>
+      <%if @cohort.students.present?%>
+      <h4>Students in this cohort:</h4>
+      <ul>
+        <%@cohort.students.each do |st|%>
+        <li><%=st.full_name%></li>
+        <%end%>
+      </ul>
+        <%else%>
+        <p>No student added!</p>
+        <%end%>
+    </div>
 
-<p>Students in this Cohort:</p>
-<%if !@cohort.students.empty?%>
-<ul>
-  <%@cohort.students.each do |st|%>
-  <li><%=st.full_name%></li>
-  <%end%>
-</ul>
-  <%else%>
-  <p>No student added!</p>
-  <%end%>
+    <div>
+      <h1><%=@cohort.name.capitalize%></h1>
+      <a class="icons" href="<%= edit_admin_cohort_path %>">
+        <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
+      </a> &nbsp &nbsp &nbsp
+      <span class="icons">
+        <%= link_to admin_cohort_path(@cohort), remote: true, method: :delete, data: {confirm: 'Are you sure?'} do %>
+        <%= image_tag("https://img.icons8.com/bubbles/100/000000/delete.png") %>
+        <% end %>
+      </span>  &nbsp &nbsp &nbsp
+      <a class="icons" href="<%= admin_cohorts_path %>">
+        <img src="https://img.icons8.com/bubbles/500/000000/transaction-list.png">
+      </a>
+    </div>
 
-<br>
-
-<%= link_to 'Edit', edit_admin_cohort_path %>
-
-</body>
+  </div>
+</div>

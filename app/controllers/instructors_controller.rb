@@ -57,7 +57,7 @@ class InstructorsController < ApplicationController
                                     :age, :salary,
                                     :education,
                                     :email, :password,
-                                    :cohort_id)
+                                    :avatar, :cohort_id)
   end
 
 end

@@ -4,11 +4,16 @@ class Admin < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :password, presence: true, confirmation: true, length: { minimum: 6 }
+  has_one_attached :avatar
   has_secure_password
 
+  def full_name
+    full_name = self.first_name.capitalize + ", " + self.last_name.capitalize
+    return full_name
+  end
 
-  # has_many :instructors
-  # has_many :students
-  # has_many :courses
-  # has_many :cohorts
+  def initials
+    initials = self.first_name.chars.first.upcase + self.last_name.chars.first.upcase
+  end
+
 end

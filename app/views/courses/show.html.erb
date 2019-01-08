@@ -1,9 +1,27 @@
-<body id="course">
-<h1><%=@course.name%></h1>
+<div class="profile center">
+  <div class="profile-card center">
+    <div>
+      <div class="default"><%="#{@course.name.chars.first.capitalize}"%></div>
+    </div>
 
-<p>Course Name: &nbsp <%=@course.name%></p>
-<p>Class Hours: &nbsp <%=@course.class_hours%></p>
+    <div>
+      <h1><%=@course.name.capitalize%></h1>
 
-<br>
-<!-- <%= link_to 'Edit',  edit_admin_course_path %> -->
-</body>
+      <h4>Course Name: &nbsp <%=@course.name.capitalize%></h4>
+      <h4>Hours: &nbsp <%=@course.class_hours%></h4>
+      <hr>
+      <a class="icons" href="<%= edit_admin_course_path %>">
+        <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
+      </a> &nbsp &nbsp &nbsp
+      <span class="icons">
+        <%= link_to admin_course_path(@course), remote: true, method: :delete, data: {confirm: 'Are you sure?'} do %>
+        <%= image_tag("https://img.icons8.com/bubbles/100/000000/delete.png") %>
+        <% end %>
+      </span>  &nbsp &nbsp &nbsp
+      <a class="icons" href="<%= admin_courses_path %>">
+        <img src="https://img.icons8.com/bubbles/500/000000/transaction-list.png">
+      </a>
+
+    </div>
+  </div>
+</div>

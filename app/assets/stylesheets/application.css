@@ -16,7 +16,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC");
 @import "animations";
-
+@import "buttons";
 
 body {
   margin: 0;
@@ -85,8 +85,8 @@ a {
 }
 
 .main {
-    margin-left: 15%;
-    padding: 0px 10px;
+  margin-left: 15%;
+  padding: 1.5% 2%;
 }
 
 .container {
@@ -173,16 +173,17 @@ a {
   grid-template: 100% / repeat(2, 50%);
   background-color: #fffbfd;
   /* background-color: rgb(238,174,202); */
-  /* background-image: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(44,181,232,1) 100%); */
+  /* background-image: linear-gradient(216deg, rgba(245,50,203,1) 0%, rgba(176,48,241,1) 100%); */
 }
 
-.card-top:hover {
+/* .card-top:hover { */
   /* background-color: rgb(10,71,133); */
-  background-color: #fffbfd;
-}
+  /* background-color: #fffbfd; */
+/* } */
 
 .card-top img {
   height: 100%;
+  padding: 5%;
   /* border-radius: 50%; */
   position: relative;
 }
@@ -211,97 +212,78 @@ a {
   background-image: linear-gradient(216deg, rgba(245,222,50,1) 0%, rgba(241,182,48,1) 100%);
 } */
 
-
-.btn {
-  display:inline-block;
-  position:relative;
-  padding:10px 25px;
-  border:2px solid #f16f9d;
-  color:#f16f9d;
-  font-size:1.1em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: color 0.4s
+.profile {
+  padding: 5%;
+  padding-left: 33%;
 }
 
-.btn-primary::after {
-  content:" ";
-  display:inline-block;
-  width:100%;
-  height:100%;
-  position:absolute;
-  top:0;
-  bottom:0;
-  right:0;
-  left:0;
-  margin:auto;
-  transition:all 0.4s;
+.profile-card {
+  display: grid;
+  grid-template: 292px 148px / 350px 195px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+  position: absolute;
+  border-radius: 25px;
+  background-image: linear-gradient(0deg, rgba(251,194,235,1) 0%, rgba(166,193,238,1) 100%);
+  background-size: 60% 100%;
+  background-repeat: no-repeat;
+  padding: 2%;
 }
 
-.btn-primary:hover {
-  color:#f16f9d;
+.profile-img {
+  width: 300px;
+  height: 270px;
+  border-radius: 50%;
 }
 
-.btn-primary:hover::after {
-  border:2px solid #f16f9d;
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
+.default {
+  display: block;
+  width: 300px;
+  height: 270px;
+  border-radius: 50%;
+  background-image: url("/assets/default.jpg"), linear-gradient(rgba(10,10,10,0.4),rgba(0,0,0,0.4));
+  background-blend-mode: overlay;
+  background-size: cover;
+  color: white;
+  line-height: 2.3em;
+  font-size: 7em;
 }
 
-.btn-secondary::after {
-  content:" ";
-  display:inline-block;
-  width:100%;
-  height:100%;
-  position:absolute;
-  top:0;
-  bottom:0;
-  right:0;
-  left:0;
-  margin:auto;
-  transition:all 0.4s;
+.icons img {
+  width: 70px;
+  height: 70px;
 }
 
-.btn-secondary:hover {
-  color:#ffecf6;
+.cohort {
+  padding: 5%;
+  padding-left: 20%;
 }
 
-.btn-secondary:hover::after {
-  border:2px solid #ffecf6;
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
+.cohort-card {
+  display: grid;
+  grid-template: repeat(2, 50%) / repeat(2, 50%);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+  position: absolute;
+  border-radius: 25px;
+  background-image: linear-gradient(0deg, rgba(251,194,235,1) 0%, rgba(166,193,238,1) 100%);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  padding: 2%;
 }
 
-.btn-account {
-  display:inline-block;
-  position:relative;
-  padding:10px 25px;
-  border:2px solid #f16f9d;
-  color:#f16f9d;
-  font-size:1.1em;
-  text-decoration:none;
-  transition: color 0.4s
+.cohort-img {
+  width: 300px;
+  height: 270px;
+  border-radius: 50%;
 }
 
-.btn-account:hover {
-  color:#ffffff;
-  background-color: #f16f9d;
-}
-
-.btn-login {
-  display:inline-block;
-  position:relative;
-  padding:10px 25px;
-  border:2px solid #ffecf6;
-  color:#ffecf6;
-  font-size:1.1em;
-  text-decoration:none;
-  transition: color 0.4s
-}
-
-.btn-login:hover {
-  color:#f16f9d;
-  background-color: #ffecf6;
+/************* Forms *************/
+input[type=text], input[type=email], input[type=password]{
+  width: 30%;
+  background-color: #ffffff;
+  font-size: .87em;
+  padding: 10px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 /*************Flash Alerts *************/

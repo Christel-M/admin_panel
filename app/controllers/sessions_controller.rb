@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "Incorrect email address or password. Please try again"
-      puts "failed!!"
+      puts "failed!! @"
       render 'new'
     end
   end

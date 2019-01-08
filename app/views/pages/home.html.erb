@@ -10,8 +10,8 @@
     <div class="card">
       <div class="card-grid">
         <div class="card-top center">
-          <a href="<%=new_admin_course_path(session[:user_id])%>">
-            <img src="http://png.clipart-library.com/images4/2/book-clipart-transparent-8.png">
+          <a href="<%=admin_courses_path(session[:user_id])%>">
+            <img src="https://areason2write.files.wordpress.com/2010/09/books-in-stack.png">
           </a>
           <h2 class="center">Courses</h2>
         </div>
@@ -29,7 +29,7 @@
     <div class="card">
       <div class="card-grid">
         <div class="card-top center">
-          <a href="<%=new_admin_student_path(session[:user_id])%>">
+          <a href="<%=admin_students_path(session[:user_id])%>">
             <img src="https://openclipart.org/download/284854/publicdomainq-0004934crltvo.svg">
           </a>
           <h2 class="center">Students</h2>
@@ -48,8 +48,8 @@
     <div class="card">
       <div class="card-grid">
         <div class="card-top center">
-          <a href="<%=new_admin_instructor_path(session[:user_id])%>">
-            <img src="http://worldartsme.com/images/google-free-teacher-clipart-1.jpg">
+          <a href="<%=admin_instructors_path(session[:user_id])%>">
+            <img src="https://openclipart.org/image/2400px/svg_to_png/295930/publicdomainq-instruct.png">
           </a>
           <h2 class="center">Instructors</h2>
         </div>
@@ -67,8 +67,8 @@
     <div class="card">
       <div class="card-grid">
         <div class="card-top center">
-          <a href="<%=new_admin_cohort_path(session[:user_id])%>">
-            <img src="https://dumielauxepices.net/sites/default/files/school-clipart-clipart-library-class-752403-1553543.png">
+          <a href="<%=admin_cohorts_path(session[:user_id])%>">
+            <img src="http://www.clker.com/cliparts/7/f/5/1/128165808084466705classroom.svg.hi.png">
           </a>
           <h2 class="center">Cohorts</h2>
         </div>

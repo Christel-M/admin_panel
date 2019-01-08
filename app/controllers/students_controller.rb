@@ -48,13 +48,18 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @student.destroy
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   private
 
   def st_params
     params.require(:student).permit(:first_name, :last_name,
-                                    :age, :education,
+                                    :age, :education,:avatar,
                                     :email, :password)
   end
 

@@ -13,15 +13,11 @@
   <%= f.date_field :end_date%></p>
 
 <p><%= f.label :course, "Select Course"%> <br>
-  <%= f.select(:course_id, Course.all.collect{ |cr|
-                                              ["#{cr.id}, #{cr.name}"]
-                                              },{ :selected => @cohort.id})%>
+  <%= f.collection_select(:course_id, Course.all, :id, :name) %>
 </p>
 
 <p><%= f.label :instructor, "Select Instructor"%> <br>
-  <%= f.select(:instructor_id, Instructor.all.collect{ |inst|
-                                              ["#{inst.id}, #{inst.full_name}"]
-                                              },{ :selected => @cohort.id})%>
+  <%= f.collection_select(:instructor_id, Instructor.all, :id, :full_name) %>
 </p>
 
 <p><%= f.label :student, "Select Students"%> <br>

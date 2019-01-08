@@ -46,6 +46,11 @@ class CohortsController < ApplicationController
     @cohort = Cohort.find(params[:id])
     @cohort.destroy
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   private

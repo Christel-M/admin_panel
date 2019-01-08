@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
   root 'pages#home'
 
-  resources :sessions, only: [:new, :create, :index, :destroy]
+  resources :sessions, only: [:new, :create, :destroy]
 
   resources :admins do
     resources :courses
