@@ -48,6 +48,13 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.find(params[:id])
     @instructor.destroy
 
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
+    redirect_to admin_instructors_path
+
   end
 
   private

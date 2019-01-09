@@ -51,6 +51,8 @@ class CohortsController < ApplicationController
       format.js
     end
 
+    redirect_to admin_cohorts_path
+
   end
 
   private

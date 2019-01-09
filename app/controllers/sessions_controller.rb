@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
 
     if admin && admin.authenticate(params[:session][:password])
       flash[:success] = "Welcome #{admin.first_name}"
-      session[:user_id] = admin.id
+      # session[:user_id] = admin.id
+      log_in admin
       redirect_to root_path
     else
       flash[:error] = "Incorrect email address or password. Please try again"

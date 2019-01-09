@@ -18,10 +18,16 @@ gem 'uglifier', '>= 1.3.0'
 #password encryption
 gem 'bcrypt'
 
-####
+#### optional (using ActiveStorage for now)
 #gem 'carrierwave'
 
+gem 'chosen-rails'
+gem 'jquery-rails'
+
 gem 'sentry-raven'
+
+gem 'aws-sdk-s3', require: false
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

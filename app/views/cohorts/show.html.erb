@@ -1,7 +1,7 @@
 <div class="cohort">
   <div class="cohort-card">
     <div>
-      <div class="default"><%="#{@cohort.name.chars.first.capitalize}"%></div>
+      <div class="default center"><%="#{@cohort.name.chars.first.capitalize}"%></div>
     </div>
 
     <div>
@@ -30,8 +30,8 @@
         <%end%>
     </div>
 
-    <div>
-      <h1><%=@cohort.name.capitalize%></h1>
+    <div class="center">
+      <h1 class="center"><%=@cohort.name.capitalize%></h1>
       <a class="icons" href="<%= edit_admin_cohort_path %>">
         <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
       </a> &nbsp &nbsp &nbsp

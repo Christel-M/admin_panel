@@ -1,3 +1,57 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.course-page-title h1{
+  /* border-bottom: 1px dashed #d6a3dc; */
+  font-size: 3em;
+  color: #e42568;
+}
+
+.course-table {
+  /* background-color: #f1e7e6; */
+  /* padding-top: 5%; */
+  padding-left: 10%;
+  /* justify-content: center; */
+  width: 80%;
+  /* display: block; */
+}
+.course-table-header {
+  width: 100%;
+  display: inline-grid;
+  grid-template: 50px / 20% 30% 26% 8% 8% 8%;
+  /* position: sticky; */
+  text-transform: uppercase;
+  border-bottom-color: #d6a3dc;
+  border-bottom-style: double;
+  line-height: 3em;
+}
+
+.course-row {
+  width: 100%;
+  display: inline-grid;
+  grid-template: 50px / 20% 30% 26% 8% 8% 8%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  line-height: 3em;
+  border-bottom: 1px dashed #d6a3dc;
+}
+
+
+.course-table-img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 70%;
+  background-image: url("/assets/default.jpg"), linear-gradient(rgba(10,10,10,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+  background-size: cover;
+  text-align: center;
+  font-size: 2em;
+  color: white;
+}
+
+.course-table-icon img {
+  width: 55px;
+  height: 55px;
+}

@@ -219,12 +219,12 @@ a {
 
 .profile-card {
   display: grid;
-  grid-template: 292px 148px / 350px 195px;
+  grid-template: 300px 280px / 300px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
   position: absolute;
   border-radius: 25px;
   background-image: linear-gradient(0deg, rgba(251,194,235,1) 0%, rgba(166,193,238,1) 100%);
-  background-size: 60% 100%;
+  background-size: 100% 52%;
   background-repeat: no-repeat;
   padding: 2%;
 }
@@ -240,7 +240,7 @@ a {
   width: 300px;
   height: 270px;
   border-radius: 50%;
-  background-image: url("/assets/default.jpg"), linear-gradient(rgba(10,10,10,0.4),rgba(0,0,0,0.4));
+  background-image: url("/assets/default.jpg"), linear-gradient(rgba(10,10,10,0.5),rgba(0,0,0,0.5));
   background-blend-mode: overlay;
   background-size: cover;
   color: white;
@@ -260,20 +260,37 @@ a {
 
 .cohort-card {
   display: grid;
-  grid-template: repeat(2, 50%) / repeat(2, 50%);
+  grid-template: 300px 150px / 300px 290px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
   position: absolute;
   border-radius: 25px;
   background-image: linear-gradient(0deg, rgba(251,194,235,1) 0%, rgba(166,193,238,1) 100%);
-  background-size: 50% 100%;
+  background-size: 55% 100%;
   background-repeat: no-repeat;
   padding: 2%;
+}
+
+.cohort-card div:nth-child(2) {
+  padding-left: 15%;
 }
 
 .cohort-img {
   width: 300px;
   height: 270px;
   border-radius: 50%;
+}
+
+.cohort-default {
+  display: block;
+  width: 300px;
+  height: 270px;
+  border-radius: 50%;
+  background-image: url("/assets/default.jpg"), linear-gradient(rgba(10,10,10,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+  background-size: cover;
+  color: white;
+  line-height: 2.3em;
+  font-size: 7em;
 }
 
 /************* Forms *************/

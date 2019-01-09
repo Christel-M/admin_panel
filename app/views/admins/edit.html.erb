@@ -8,17 +8,14 @@
 <% end %>
 
 <%=form_for(@admin) do |f|%>
-<p><%= f.label :first_name, "First Name"%> <br>
-  <%= f.text_field :first_name%></p>
+<p><%= f.text_field :first_name, placeholder: "First name" %></p>
 
-<p><%= f.label :last_name, "Last Name"%> <br>
-  <%= f.text_field :last_name%></p>
+<p><%= f.text_field :last_name, placeholder: "Last name" %></p>
 
-<p><%= f.label :email%> <br>
-<%= f.email_field :email%></p>
+<p><%= f.email_field :email, placeholder: "Email address" %></p>
 
-<p><%= f.label :password, "Password"%> <br>
-  <%= f.password_field :password %></p>
+<p><%= f.password_field :password, placeholder: "Password" %> <br>
+  <%= f.password_field :password, placeholder: "Confirm password" %></p>
 
 <p><%= f.label :avatar%> <br>
   <%= f.file_field :avatar, direct_upload: true %>

@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+
   def new
     @admin = Admin.new
   end
@@ -9,7 +10,8 @@ class AdminsController < ApplicationController
     if @admin.valid?
       @admin.save
       flash[:success] = "Account Successfully Created! Welcome #{@admin.first_name}"
-      redirect_to @admin
+      log_in @admin
+      redirect_to root_path
     else
       puts @admin.errors.messages
       # flash[:error] = "Please Try Again"

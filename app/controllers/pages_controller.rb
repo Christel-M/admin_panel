@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   def home
     user = Admin.find_by(params[:session])
     if session[:user_id]
@@ -9,5 +10,5 @@ class PagesController < ApplicationController
         puts "Failed!!"
       end
   end
-  
+
 end

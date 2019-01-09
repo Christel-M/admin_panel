@@ -38,18 +38,15 @@
       <%= yield %>
     </div>
 
-    <script>
+  <script type="text/javascript">
+    window.addEventListener('load', function(){
+      console.log("works");
+      setTimeout(function(){
+        var alert = document.getElementById('alerts');
+        alert.classList.add('hidden');
+      },2000)
+    });
+  </script>
 
-      console.log("testing");
-
-      let alertbx = document.getElementById('alerts');
-      console.log(alertbx);
-      alertbx.addEventListener("load", setTimeout(function (){
-        let alertbox = document.querySelector('.alert');
-        alertbox.classList.add("hidden");
-      }, 2000));
-
-
-    </script>
   </body>
   </html>

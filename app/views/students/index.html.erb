@@ -1,18 +1,49 @@
-<body id="student">
-<h1>Students</h1>
+  <div class="container">
+    <div class="student-page-title center">
+      <h1>Students</h1>
+      <!-- <a class="btn btn-primary" href="<%= new_admin_student_path(session[:user_id]) %>"> Add New Student </a>
+      <a class="btn btn-secondary" href="<%= new_admin_student_path(session[:user_id]) %>"> Add New Student -->
+        <!-- <img src="https://img.icons8.com/bubbles/500/000000/plus.png"> -->
+      <!-- </a> -->
+    </div>
 
-<ol>
-  <%@student.each do |st|%>
-  <li>
-    Full Name: &nbsp <%=st.last_name%>,  <%=st.first_name%> &nbsp
-    Age: &nbsp <%=st.age%> &nbsp
-    Education: &nbsp <%=st.education%> &nbsp
-    <%= link_to 'Info',  admin_student_path(session[:user_id], st)%> &nbsp
-    <%= link_to 'Edit',  edit_admin_student_path(session[:user_id], st)%> &nbsp
-    <%= link_to "Delete", admin_student_path(session[:user_id], st), remote: true, method: :delete, data: { confirm: 'Are you sure?'}, class: 'delete-item'%>
-  </li>
+  <div class="student-table">
+    <div class="student-table-header">
+      <div></div>
+      <div>Full Name</div>
+      <div>Age</div>
+      <div>Education</div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-  <%end%>
-</ol>
+    <div class="student-table-body">
+      <%@student.reverse.each do |st|%>
+      <div class="student-row" id="student-<%=st.id%>">
+        <div class="student-table-img"><%="#{st.initials}"%></div>
+        <div><%=st.full_name%></div>
+        <div><%=st.age%></div>
+        <div><%=st.education%></div>
+        <div class="center">
+          <a class="student-table-icon" href="<%= admin_student_path(session[:user_id], st) %>">
+            <img src="https://img.icons8.com/bubbles/500/000000/contact-card.png">
+          </a>
+        </div>
+        <div class="center">
+          <a class="student-table-icon" href="<%= edit_admin_student_path(session[:user_id], st) %>">
+            <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
+          </a>
+        </div>
 
-</body>
+        <div class="center">
+          <%= link_to admin_student_path(session[:user_id], st), remote: true, method: :delete, data: {confirm: 'Are you sure?'}, class: 'student-table-icon' do %>
+          <%= image_tag("https://img.icons8.com/bubbles/500/000000/minus.png",) %>
+          <% end %>
+        </div>
+      </div>
+    <%end%>
+  </div>
+  </div>
+
+  </div>

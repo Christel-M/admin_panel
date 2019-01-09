@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+
   def new
     @admin = Admin.find(params[:admin_id])
     @student = Student.new
@@ -52,6 +53,8 @@ class StudentsController < ApplicationController
       format.html
       format.js
     end
+
+    redirect_to admin_students_path
 
   end
 

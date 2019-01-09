@@ -52,6 +52,8 @@ class CoursesController < ApplicationController
       format.js
     end
 
+    redirect_to admin_courses_path
+
   end
 
   private

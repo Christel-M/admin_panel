@@ -4,14 +4,10 @@ class Student < ApplicationRecord
   validates :education, presence: true
   validates :age, inclusion: {in: 1..150, :message => "needs to be greater than 1 and less than 150"}
   has_one_attached :avatar
-  # validates :email, presence: true
-  # validates :password, presence: true
-  # edu = %w(High\ School College Masters PHD)
-  # validates_inclusion_of :education, :in => edu
-  # belongs_to :admin
+  # validates_uniqueness_of :email, presence: true
 
   def full_name
-    full_name = self.first_name.capitalize + ", " + self.last_name.capitalize
+    full_name = self.first_name.capitalize + " " + self.last_name.capitalize
     return full_name
   end
 
