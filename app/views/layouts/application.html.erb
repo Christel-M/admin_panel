@@ -16,7 +16,7 @@
     <% end %>
   </div>
 
-  <% if session[:user_id]!= nil%>
+  <% if logged_in?%>
   <nav class="sidenav">
     <a href="/">
       <h3>Luna's School</h3>
@@ -37,6 +37,10 @@
     <div class="main">
       <%= yield %>
     </div>
+
+    <script type="text/javascript">
+      $('.chosen-select').chosen()
+    </script>
 
   <script type="text/javascript">
     window.addEventListener('load', function(){

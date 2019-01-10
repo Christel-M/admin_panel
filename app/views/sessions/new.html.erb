@@ -47,23 +47,22 @@
 
   input[type=submit]:hover {
     color:#ffffff;
-    background-color: #f16f9d;
+    background-color: #e42568;
   }
 </style>
 <div class="container">
   <div class="sub-container">
     <div class="account-grid center">
-      <div class="animate-up">
-        <h1>Luna's School</h1>
-        <h2>Welcome Back</h2>
+      <!-- <div class="animate-up">
         <h4>Don't Have An Account?</h4>
         <h4><%= link_to 'Sign Up', new_admin_path, class: 'btn-login'%></h4>
         <!-- <img src="/assets/logo.png"> -->
-      </div>
+      <!--</div> -->
 
-      <div class="animate-down">
-
-        <h1>Log In</h1>
+      <div class="fadein">
+        <h1>Luna's School</h1>
+        <h1>Welcome Back</h1>
+        <h2>Log In</h2>
 
         <%= form_for(:session, url: login_path) do |f| %>
 

@@ -32,5 +32,42 @@
   }
 }
 
-/**fade in  / fade out
-** blur maybe? **/
+.fadein {
+  position: relative;
+  animation-name: fadein;
+  animation-duration: 1s;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeout {
+  position: relative;
+  animation-name: fadeout;
+  animation-duration: 1s;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

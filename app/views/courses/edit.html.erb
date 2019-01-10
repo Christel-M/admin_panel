@@ -1,17 +1,23 @@
-<body id="course">
-<h1>Edit <%=@course.name%></h1>
+<%if logged_in?%>
+<div class="forms">
+  <div class="forms-grid">
+    <div>
+      <h1 class="center">Edit Course: <%=@course.name%></h1>
 
-<%= form_for([@admin, @course]) do |f|%>
+      <%= form_for([@admin, @course]) do |f|%>
 
-<p><%= f.label :name, "Course Name"%> <br>
-  <%= f.text_field :name%></p>
+      <p><%= f.label :name, "Course Name"%> <br>
+        <%= f.text_field :name%></p>
 
-<p><%= f.label :class_hours, "Class Hours"%> <br>
-<%= f.number_field :class_hours%></p>
+        <p><%= f.label :class_hours, "Class Hours"%> <br>
+          <%= f.number_field :class_hours%></p>
 
-<p>
-  <%= f.submit "Update Information"%>
-</p>
+          <p class="center">
+            <%= f.submit "Update Information", class: "btn btn-account"%>
+          </p>
 
+          <%end%>
+    </div>
+  </div>
+</div>
 <%end%>
-</body>

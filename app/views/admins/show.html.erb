@@ -1,4 +1,4 @@
-<% if session[:user_id] == nil%>
+<% if !logged_in?%>
 <div class="container">
   <div class="sub-container center">
     <div class="animate-down">
@@ -8,7 +8,7 @@
     </div>
   </div>
 </div>
-<% elsif  %>
+<% else  %>
 
 <div class="profile center">
   <div class="profile-card center">

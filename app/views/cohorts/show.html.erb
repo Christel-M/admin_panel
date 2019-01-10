@@ -1,13 +1,11 @@
 <div class="cohort">
   <div class="cohort-card">
     <div>
-      <div class="default center"><%="#{@cohort.name.chars.first.capitalize}"%></div>
-    </div>
-
-    <div>
+      <div class="cohort-default center"><%="#{@cohort.name.chars.first.capitalize}"%></div>
+      <h1 class="center"><%=@cohort.name.capitalize%></h1>
       <h4>Cohort Name: &nbsp<%=@cohort.name.capitalize%></h4>
-      <h4>Start Date: &nbsp <%=@cohort.start_date%></h4>
-      <h4>End Date: &nbsp <%=@cohort.end_date%></h4>
+      <h4>Start Date: &nbsp <%=@cohort.start_date.strftime('%b %d, %C%y')%></h4>
+      <h4>End Date: &nbsp <%=@cohort.end_date.strftime('%b %d, %C%y')%></h4>
       <%if @cohort.course.present?%>
       <h4>Course: &nbsp  <%=@cohort.course.name%></h4>
       <%else%>
@@ -26,12 +24,8 @@
         <%end%>
       </ul>
         <%else%>
-        <p>No student added!</p>
+        <h4>No student added!</h4>
         <%end%>
-    </div>
-
-    <div class="center">
-      <h1 class="center"><%=@cohort.name.capitalize%></h1>
       <a class="icons" href="<%= edit_admin_cohort_path %>">
         <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
       </a> &nbsp &nbsp &nbsp
@@ -43,7 +37,7 @@
       <a class="icons" href="<%= admin_cohorts_path %>">
         <img src="https://img.icons8.com/bubbles/500/000000/transaction-list.png">
       </a>
-    </div>
+
 
   </div>
 </div>

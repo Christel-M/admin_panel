@@ -1,43 +1,41 @@
 <div class="container">
   <div class="course-page-title center">
     <h1>Courses</h1>
-  </div>
+    <a class="btn btn-secondary" href="<%= new_admin_course_path %>">Add New Student</a>
+  </div> <br>
 
-<div class="course-table">
-  <div class="course-table-header">
-    <div></div>
-    <div>Course Name</div>
-    <div>Hours</div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <div class="course-table-body">
-    <%@course.reverse.each do |cr|%>
-    <div class="course-row" id="course-<%=cr.id%>">
-      <div class="course-table-img"><%="#{cr.name.first.capitalize}"%></div>
-      <div><%=cr.name.capitalize%></div>
-      <div><%=cr.class_hours%></div>
-      <div class="center">
-        <a class="course-table-icon" href="<%= admin_course_path(session[:user_id], cr) %>">
-          <img src="https://img.icons8.com/bubbles/500/000000/contact-card.png">
-        </a>
-      </div>
-      <div class="center">
-        <a class="course-table-icon" href="<%= edit_admin_course_path(session[:user_id], cr) %>">
-          <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
-        </a>
-      </div>
-
-      <div class="center">
-        <%= link_to admin_course_path(session[:user_id], cr), remote: true, method: :delete, data: {confirm: 'Are you sure?'}, class: 'course-table-icon' do %>
-        <%= image_tag("https://img.icons8.com/bubbles/500/000000/minus.png",) %>
-        <% end %>
-      </div>
+  <div class="course-table">
+    <div class="course-table-header">
+      <div></div>
+      <div>Course Name</div>
+      <div>Hours</div>
     </div>
-  <%end%>
-</div>
-</div>
+
+    <div class="course-table-body">
+      <%@course.reverse.each do |cr|%>
+      <div class="course-row" id="course-<%=cr.id%>">
+        <div class="course-table-img"><%="#{cr.name.first.capitalize}"%></div>
+        <div><%=cr.name.capitalize%></div>
+        <div><%=cr.class_hours%></div>
+        <div class="center">
+          <a class="course-table-icon" href="<%= admin_course_path(session[:user_id], cr) %>">
+            <img src="https://img.icons8.com/bubbles/500/000000/contact-card.png">
+          </a>
+        </div>
+        <div class="center">
+          <a class="course-table-icon" href="<%= edit_admin_course_path(session[:user_id], cr) %>">
+            <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
+          </a>
+        </div>
+
+        <div class="center">
+          <%= link_to admin_course_path(session[:user_id], cr), remote: true, method: :delete, data: {confirm: 'Are you sure?'}, class: 'course-table-icon' do %>
+          <%= image_tag("https://img.icons8.com/bubbles/500/000000/minus.png",) %>
+          <% end %>
+        </div>
+      </div>
+      <%end%>
+    </div>
+  </div>
 
 </div>

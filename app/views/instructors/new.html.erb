@@ -1,28 +1,39 @@
-<body id="instructor">
-<h1>Create Instructor</h1>
-<%=form_for([@admin, @instructor]) do |f|%>
-<p><%= f.label :first_name, "First Name"%> <br>
-  <%= f.text_field :first_name%></p>
+<%if logged_in?%>
+<div class="forms">
+  <div class="forms-grid">
+    <div>
+      <h1>Create Instructor</h1>
+      <%=form_for([@admin, @instructor]) do |f|%>
+      <p><%= f.label :first_name, "First Name"%> <br>
+        <%= f.text_field :first_name%></p>
 
-<p><%= f.label :last_name, "Last Name"%> <br>
-  <%= f.text_field :last_name%></p>
+        <p><%= f.label :last_name, "Last Name"%> <br>
+          <%= f.text_field :last_name%></p>
 
-<p><%= f.label :age%> <br>
-<%= f.number_field :age%></p>
+          <p><%= f.label :age%> <br>
+            <%= f.number_field :age%></p>
 
-<p><%= f.label :salary%> <br>
-  <%= f.number_field :salary%></p>
+            <p><%= f.label :salary%> <br>
+              <%= f.number_field :salary%></p>
 
-<p><%= f.label :education%> <br>
-  <%= f.select :education, ["Highschool Diploma", "Bachelor's Degree", "Master's Degree", "Ph.D"], :include_blank => true %></p>
+              <p><%= f.label :education%> <br>
+                <%= f.select :education, ["Highschool Diploma", "Bachelor's Degree", "Master's Degree", "Ph.D"], :include_blank => true %></p>
 
-<p>
-  <%= f.submit "Create Instructor" %>
-</p>
+                <p class="center">
+                  <%= f.submit "Create Instructor", class: "btn btn-account"%>
+                </p>
 
+                <%end%>
+              <div class="center">
+                  <a class="icons" href="<%= admin_instructors_path%>">
+                    <img src="https://img.icons8.com/bubbles/500/000000/restart.png">
+                  </a>
+
+                  <a class="icons" href="<%= root_path%>">
+                    <img src="https://img.icons8.com/bubbles/500/000000/home.png">
+                  </a>
+              </div>
+        </div>
+    </div>
+</div>
 <%end%>
-
-<br><br>
-<%= link_to 'Home', root_path %>
-
-</body>

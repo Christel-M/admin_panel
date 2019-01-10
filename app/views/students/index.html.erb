@@ -1,11 +1,8 @@
-  <div class="container">
-    <div class="student-page-title center">
-      <h1>Students</h1>
-      <!-- <a class="btn btn-primary" href="<%= new_admin_student_path(session[:user_id]) %>"> Add New Student </a>
-      <a class="btn btn-secondary" href="<%= new_admin_student_path(session[:user_id]) %>"> Add New Student -->
-        <!-- <img src="https://img.icons8.com/bubbles/500/000000/plus.png"> -->
-      <!-- </a> -->
-    </div>
+<div class="container">
+  <div class="student-page-title center">
+    <h1>Students</h1>
+    <a class="btn btn-secondary" href="<%= new_admin_student_path %>">Add New Student</a>
+  </div> <br>
 
   <div class="student-table">
     <div class="student-table-header">
@@ -13,9 +10,6 @@
       <div>Full Name</div>
       <div>Age</div>
       <div>Education</div>
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
 
     <div class="student-table-body">
@@ -42,8 +36,8 @@
           <% end %>
         </div>
       </div>
-    <%end%>
-  </div>
+      <%end%>
+    </div>
   </div>
 
-  </div>
+</div>

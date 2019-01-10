@@ -22,11 +22,12 @@ gem 'bcrypt'
 #gem 'carrierwave'
 
 gem 'chosen-rails'
-gem 'jquery-rails'
+
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'sentry-raven'
 
-gem 'aws-sdk-s3', require: false
+# gem 'aws-sdk-s3', require: false
 
 
 # Use CoffeeScript for .coffee assets and views
@@ -61,6 +62,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem "pg"
 end
 
 group :test do

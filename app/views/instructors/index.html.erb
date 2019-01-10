@@ -1,47 +1,48 @@
 <div class="container">
   <div class="inst-page-title center">
     <h1>Instructors</h1>
-  </div>
+    <a class="btn btn-secondary" href="<%= new_admin_instructor_path %>">Add New Instructor</a>
+  </div> <br>
 
-<div class="inst-table">
-  <div class="inst-table-header">
-    <div></div>
-    <div>Full Name</div>
-    <div>Age</div>
-    <div>Education</div>
-    <div class="center">Salary</div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <div class="inst-body">
-    <%@instructor.reverse.each do |inst|%>
-    <div class="inst-row" id="instructor-<%=inst.id%>">
-      <div class="inst-table-img"><%="#{inst.initials}"%></div>
-      <div><%=inst.full_name%></div>
-      <div><%=inst.age%></div>
-      <div><%=inst.education%></div>
-      <div class="center">$<%=inst.salary%></div>
-      <div class="center">
-        <a class="inst-table-icon" href="<%= admin_instructor_path(session[:user_id], inst) %>">
-          <img src="https://img.icons8.com/bubbles/500/000000/contact-card.png">
-        </a>
-      </div>
-      <div class="center">
-        <a class="inst-table-icon" href="<%= edit_admin_instructor_path(session[:user_id], inst) %>">
-          <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
-        </a>
-      </div>
-
-      <div class="center">
-        <%= link_to admin_instructor_path(session[:user_id], inst), remote: true, method: :delete, data: {confirm: 'Are you sure?'}, class: 'inst-table-icon' do %>
-        <%= image_tag("https://img.icons8.com/bubbles/500/000000/minus.png",) %>
-        <% end %>
-      </div>
+  <div class="inst-table">
+    <div class="inst-table-header">
+      <div></div>
+      <div>Full Name</div>
+      <div>Age</div>
+      <div>Education</div>
+      <div class="center">Salary</div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-  <%end%>
-</div>
-</div>
+
+    <div class="inst-body">
+      <%@instructor.reverse.each do |inst|%>
+      <div class="inst-row" id="instructor-<%=inst.id%>">
+        <div class="inst-table-img"><%="#{inst.initials}"%></div>
+        <div><%=inst.full_name%></div>
+        <div><%=inst.age%></div>
+        <div><%=inst.education%></div>
+        <div class="center">$<%=inst.salary%></div>
+        <div class="center">
+          <a class="inst-table-icon" href="<%= admin_instructor_path(session[:user_id], inst) %>">
+            <img src="https://img.icons8.com/bubbles/500/000000/contact-card.png">
+          </a>
+        </div>
+        <div class="center">
+          <a class="inst-table-icon" href="<%= edit_admin_instructor_path(session[:user_id], inst) %>">
+            <img src="https://img.icons8.com/bubbles/500/000000/edit.png">
+          </a>
+        </div>
+
+        <div class="center">
+          <%= link_to admin_instructor_path(session[:user_id], inst), remote: true, method: :delete, data: {confirm: 'Are you sure?'}, class: 'inst-table-icon' do %>
+          <%= image_tag("https://img.icons8.com/bubbles/500/000000/minus.png",) %>
+          <% end %>
+        </div>
+      </div>
+      <%end%>
+    </div>
+  </div>
 
 </div>

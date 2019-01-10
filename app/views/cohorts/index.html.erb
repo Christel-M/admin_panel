@@ -1,7 +1,8 @@
 <div class="container">
   <div class="cohort-page-title center">
     <h1>Cohorts</h1>
-  </div>
+    <a class="btn btn-secondary" href="<%= new_admin_cohort_path %>">Create Cohort</a>
+  </div> <br>
 
 <div class="cohort-table">
   <div class="cohort-table-header">
@@ -35,8 +36,8 @@
         <%end%>
       </div>
       <div><%=ch.name%></div>
-      <div><%=ch.start_date%></div>
-      <div><%=ch.end_date%></div>
+      <div><%=ch.start_date.strftime('%b %d, %C%y')%></div>
+      <div><%=ch.end_date.strftime('%b %d, %C%y')%></div>
       <div class="center">
         <a class="cohort-table-icon" href="<%= admin_cohort_path(session[:user_id], ch) %>">
           <img src="https://img.icons8.com/bubbles/500/000000/contact-card.png">
