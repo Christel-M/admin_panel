@@ -52,6 +52,7 @@ GEM
     bootsnap (1.3.2)
       msgpack (~> 1.0)
     builder (3.2.3)
+    byebug (10.0.2)
     capybara (3.12.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -141,6 +142,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.2.2)
       actionpack (= 5.2.2)
       activesupport (= 5.2.2)
@@ -210,6 +216,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   bootsnap (>= 1.1.0)
+  byebug
   capybara (>= 2.15)
   chosen-rails
   chromedriver-helper
@@ -220,6 +227,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.2)
+  rails_12factor
   sass-rails (~> 5.0)
   selenium-webdriver
   sentry-raven
