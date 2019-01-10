@@ -87,7 +87,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   Raven.configure do |config|
-    config.dsn = ENV["SENTRY DSN"]
+    config.sanitize_fields = Rails.application.config.filter_parameters.map(&:to_s)
   end
 
 
