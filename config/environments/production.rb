@@ -30,7 +30,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   ### Google
-  config.active_storage.service = :google
+  # config.active_storage.service = :google
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
