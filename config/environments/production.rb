@@ -85,7 +85,7 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
-  RAILS_ENV=production bundle exec rake assets:precompile
+  # RAILS_ENV=production bundle exec rake assets:precompile
 
   Raven.configure do |config|
     config.sanitize_fields = Rails.application.config.filter_parameters.map(&:to_s)
