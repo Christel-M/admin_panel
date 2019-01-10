@@ -26,6 +26,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'sentry-raven'
 
+gem 'google-cloud-storage', '~> 1.8', require: false
+
 # gem 'aws-sdk-s3', require: false
 
 
