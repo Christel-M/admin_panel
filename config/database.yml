@@ -23,5 +23,6 @@ test:
 production:
   adapter: postgresql
   database: myapp_production
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
