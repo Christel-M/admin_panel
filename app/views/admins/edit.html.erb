@@ -1,29 +1,33 @@
-<body id="profile">
-<h2>Edit Profile</h2>
+<div class="forms">
+  <div class="forms-grid">
+    <div>
+      <h2 class="center">Edit Profile</h2>
 
-<% if @admin.errors.any? %>
-  <% @admin.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-<% end %>
+      <% if @admin.errors.any? %>
+      <% @admin.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+      <% end %>
 
-<%=form_for(@admin) do |f|%>
-<p><%= f.text_field :first_name, placeholder: "First name" %></p>
+      <%=form_for(@admin) do |f|%>
+      <p><%= f.text_field :first_name, placeholder: "First name" %></p>
 
-<p><%= f.text_field :last_name, placeholder: "Last name" %></p>
+      <p><%= f.text_field :last_name, placeholder: "Last name" %></p>
 
-<p><%= f.email_field :email, placeholder: "Email address" %></p>
+      <p><%= f.email_field :email, placeholder: "Email address" %></p>
 
-<p><%= f.password_field :password, placeholder: "Password" %> <br>
-  <%= f.password_field :password, placeholder: "Confirm password" %></p>
+      <p><%= f.password_field :password, placeholder: "Password" %> <br>
+        <%= f.password_field :password, placeholder: "Confirm password" %></p>
 
-<p><%= f.label :avatar%> <br>
-  <%= f.file_field :avatar, direct_upload: true %>
-</p>
+        <p><%= f.label :avatar%> <br>
+          <%= f.file_field :avatar, direct_upload: true %>
+        </p>
 
-<p>
-  <%= f.submit "Update Information" %>
-</p>
+        <p>
+          <%= f.submit "Update Information", class: "btn btn-account" %>
+        </p>
 
-<%end%>
-</body>
+        <%end%>
+    </div>
+  </div>
+</div>
