@@ -1,7 +1,7 @@
 <div class="profile center">
   <div class="profile-card center">
     <div>
-      <div class="default"><%="#{@student.initials}"%></div>
+      <%= @student.avatar.attachment.nil? ? content_tag(:div, "#{@student.initials}", class: "default"): image_tag(@student.avatar, class: "profile-img") if session[:user_id] %>
     </div>
 
     <div>

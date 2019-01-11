@@ -15,7 +15,7 @@
     <div class="student-table-body">
       <%@student.reverse.each do |st|%>
       <div class="student-row" id="student-<%=st.id%>">
-        <div class="student-table-img"><%="#{st.initials}"%></div>
+        <%= st.avatar.attachment.nil? ? content_tag(:div, "#{st.initials}", class: "student-table-img"): image_tag(st.avatar, class: "table-img") if session[:user_id] %>
         <div><%=st.full_name%></div>
         <div><%=st.age%></div>
         <div><%=st.education%></div>

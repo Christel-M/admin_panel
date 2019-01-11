@@ -15,7 +15,12 @@
             <%= f.number_field :age%></p>
 
             <p><%= f.label :education%> <br>
-              <%= f.select :education, ["Highschool Diploma", "Bachelor's Degree", "Master's Degree", "Ph.D"], :include_blank => true %></p>
+              <%= f.select :education, ["Highschool Diploma", "Bachelor's Degree", "Master's Degree", "Ph.D"], :include_blank => true %>
+            </p>
+            
+            <p><%= f.label :avatar%> <br>
+              <%= f.file_field :avatar, direct_upload: true %>
+            </p>
 
               <p class="center">
                 <%= f.submit "Update Information", class: "btn btn-account"%>
