@@ -22,11 +22,8 @@
               <%= f.collection_select(:instructor_id, Instructor.all, :id, :full_name) %>
             </p>
 
-            <p><%= f.label :student, "Select Students"%> <br>
-              <%= f.collection_check_boxes :student_ids, Student.all, :id, :full_name do |st| %>
-              <%= st.check_box %>
-              <%= st.label %> <br>
-              <%end%>
+            <p>
+              <%= f.collection_select :student_ids, Student.order(:id), :id, :full_name, {}, { multiple: true, class: 'chosen-select' } %>
             </p>
 
             <p class="center">
