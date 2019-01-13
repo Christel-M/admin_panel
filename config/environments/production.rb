@@ -87,6 +87,11 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
   # RAILS_ENV=production bundle exec rake assets:precompile
 
+  Raven.configure do |config|
+    config.dsn = ENV['SENTRY_DSN']
+    config.sanitize_fields = Rails.application.config.filter_parameters.map(&:to_s)
+  end
+
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
